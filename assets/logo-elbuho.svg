@@ -1,0 +1,47 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 110" fill="none">
+  <defs>
+    <linearGradient id="goldGradElBuho" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EED792" />
+      <stop offset="50%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#8C6826" />
+    </linearGradient>
+    <linearGradient id="rubyGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#6E1624" />
+      <stop offset="100%" stop-color="#3D0B12" />
+    </linearGradient>
+  </defs>
+
+  <!-- Emblem / Crest -->
+  <g transform="translate(10, 5)">
+    <!-- Outer shield / circle -->
+    <circle cx="50" cy="50" r="46" stroke="url(#goldGradElBuho)" stroke-width="2" fill="url(#rubyGrad)" fill-opacity="0.9" />
+    <circle cx="50" cy="50" r="41" stroke="url(#goldGradElBuho)" stroke-width="0.8" stroke-dasharray="3 2" />
+    
+    <!-- Stylized Owl Silhouette -->
+    <path d="M50 20 C42 20 36 26 36 34 C36 44 42 54 50 62 C58 54 64 44 64 34 C64 26 58 20 50 20 Z" fill="none" stroke="url(#goldGradElBuho)" stroke-width="2" stroke-linejoin="round" />
+    <!-- Horns / feather ears -->
+    <path d="M37 28 L30 18 L43 23" fill="none" stroke="url(#goldGradElBuho)" stroke-width="1.8" stroke-linecap="round" />
+    <path d="M63 28 L70 18 L57 23" fill="none" stroke="url(#goldGradElBuho)" stroke-width="1.8" stroke-linecap="round" />
+    <!-- Eyes -->
+    <circle cx="44" cy="34" r="5" stroke="url(#goldGradElBuho)" stroke-width="1.5" fill="#141110" />
+    <circle cx="44" cy="34" r="2" fill="url(#goldGradElBuho)" />
+    <circle cx="56" cy="34" r="5" stroke="url(#goldGradElBuho)" stroke-width="1.5" fill="#141110" />
+    <circle cx="56" cy="34" r="2" fill="url(#goldGradElBuho)" />
+    <!-- Beak -->
+    <polygon points="50,38 47,43 53,43" fill="url(#goldGradElBuho)" />
+    <!-- Wings detail -->
+    <path d="M40 45 C43 52 46 56 50 58 C54 56 57 52 60 45" fill="none" stroke="url(#goldGradElBuho)" stroke-width="1.2" />
+    <!-- Laurel leaves underneath -->
+    <path d="M34 68 C38 72 44 74 50 74 C56 74 62 72 66 68" stroke="url(#goldGradElBuho)" stroke-width="1.2" stroke-linecap="round" />
+    <!-- Year -->
+    <text x="50" y="83" text-anchor="middle" fill="#EED792" font-family="'Playfair Display', Georgia, serif" font-size="8.5" font-weight="700" letter-spacing="1.5">1948</text>
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(120, 26)">
+    <text x="0" y="16" fill="url(#goldGradElBuho)" font-family="'Cinzel', 'Playfair Display', Georgia, serif" font-size="11" font-weight="600" letter-spacing="4">ESTANCIA</text>
+    <text x="0" y="44" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="28" font-weight="800" letter-spacing="2">EL BÚHO</text>
+    <line x1="0" y1="52" x2="260" y2="52" stroke="url(#goldGradElBuho)" stroke-width="0.8" opacity="0.6" />
+    <text x="0" y="66" fill="#D8CFBF" font-family="'Plus Jakarta Sans', Montserrat, sans-serif" font-size="9" font-weight="500" letter-spacing="2.5">AGUA DE ORO • CÓRDOBA | MAESTRÍA EN JAMÓN CRUDO</text>
+  </g>
+</svg>

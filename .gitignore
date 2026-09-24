@@ -1,0 +1,11 @@
+# Logs and caches
+.DS_Store
+Thumbs.db
+*.log
+node_modules/
+.vscode/
+.idea/
+
+# Environment
+.env
+.env.local

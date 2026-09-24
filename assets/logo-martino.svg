@@ -1,0 +1,24 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 360 90" fill="none">
+  <defs>
+    <linearGradient id="goldMartino" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#EED798" />
+      <stop offset="50%" stop-color="#CA9E44" />
+      <stop offset="100%" stop-color="#8F6A22" />
+    </linearGradient>
+  </defs>
+
+  <!-- Wine / Architecture Icon -->
+  <g transform="translate(10, 10)">
+    <circle cx="35" cy="35" r="30" stroke="url(#goldMartino)" stroke-width="1.5" fill="#181315" />
+    <path d="M35 15 L35 48 M27 48 L43 48 M23 55 L47 55" stroke="url(#goldMartino)" stroke-width="1.6" stroke-linecap="round" />
+    <path d="M23 25 C23 38 47 38 47 25 Z" stroke="url(#goldMartino)" stroke-width="1.6" fill="none" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(85, 20)">
+    <text x="0" y="24" fill="#FFFFFF" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="800" letter-spacing="3.5">MARTINO</text>
+    <text x="145" y="24" fill="url(#goldMartino)" font-family="'Playfair Display', Georgia, serif" font-size="24" font-weight="400" letter-spacing="4">WINES</text>
+    <text x="0" y="40" fill="url(#goldMartino)" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="700" letter-spacing="2.5">MAYOR DRUMMOND • LUJÁN DE CUYO</text>
+    <text x="0" y="54" fill="#B2A89C" font-family="'Plus Jakarta Sans', sans-serif" font-size="8" font-weight="500" letter-spacing="1.5">BODEGA PATRIMONIAL 1901 • GUÍA MICHELIN SELECTION</text>
+  </g>
+</svg>

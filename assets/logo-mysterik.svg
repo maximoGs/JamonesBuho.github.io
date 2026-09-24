@@ -1,0 +1,25 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 380 90" fill="none">
+  <defs>
+    <linearGradient id="purpleGold" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" stop-color="#E5C77A" />
+      <stop offset="50%" stop-color="#C5A059" />
+      <stop offset="100%" stop-color="#A27D30" />
+    </linearGradient>
+  </defs>
+
+  <!-- Geometric Modern Monogram 'M' -->
+  <g transform="translate(10, 8)">
+    <polygon points="12,65 12,12 28,12 40,42 52,12 68,12 68,65 54,65 54,32 43,58 37,58 26,32 26,65" fill="url(#purpleGold)" />
+    <!-- Dynamic geometric accent triangle -->
+    <polygon points="40,2 45,9 35,9" fill="#FFFFFF" />
+    <circle cx="40" cy="72" r="3" fill="url(#purpleGold)" />
+  </g>
+
+  <!-- Typography -->
+  <g transform="translate(95, 20)">
+    <text x="0" y="24" fill="#FFFFFF" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="24" font-weight="900" letter-spacing="4.5">MYSTERIK</text>
+    <text x="175" y="24" fill="url(#purpleGold)" font-family="'Plus Jakarta Sans', 'Inter', sans-serif" font-size="12" font-weight="400" letter-spacing="5">PRODUCCIONES</text>
+    <line x1="0" y1="36" x2="260" y2="36" stroke="url(#purpleGold)" stroke-width="0.8" opacity="0.5" />
+    <text x="0" y="50" fill="#B0A99E" font-family="'Plus Jakarta Sans', sans-serif" font-size="8.5" font-weight="600" letter-spacing="2.2">MARKETING • EXPERIENCIAS • VINCULACIÓN REGIONAL • MENDOZA</text>
+  </g>
+</svg>

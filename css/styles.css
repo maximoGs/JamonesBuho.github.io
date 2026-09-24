@@ -1,0 +1,291 @@
+/* =====================================================================
+   ESTANCIA EL BÚHO × MYSTERIK PRODUCCIONES — MENDOZA
+   Ultra-Luxury Editorial & Pitch Deck Stylesheet
+   ===================================================================== */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=Playfair+Display:ital,wght@0,500;0,700;0,800;0,900;1,400;1,700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Cinzel:wght@500;700;800&display=swap');
+
+:root {
+  --color-obsidian: #0a0808;
+  --color-surface: #141110;
+  --color-surface-elevated: #1e1917;
+  --color-surface-border: #332b27;
+  --color-wine-dark: #35080f;
+  --color-wine-rich: #63121f;
+  --color-wine-bright: #8a192c;
+  --color-gold-light: #eed798;
+  --color-gold-pure: #d4af37;
+  --color-gold-deep: #9a7629;
+  --color-bone: #f8f5ee;
+  --color-bone-muted: #c8c0b2;
+  --font-serif: 'Playfair Display', Georgia, serif;
+  --font-editorial: 'Cormorant Garamond', Georgia, serif;
+  --font-sans: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, sans-serif;
+  --font-crest: 'Cinzel', serif;
+}
+
+/* Base resets & typography */
+html {
+  scroll-behavior: smooth;
+  background-color: var(--color-obsidian);
+  color: var(--color-bone);
+  font-family: var(--font-sans);
+}
+
+body {
+  overflow-x: hidden;
+  background-color: var(--color-obsidian);
+  background-image: 
+    radial-gradient(circle at 15% 20%, rgba(99, 18, 31, 0.22) 0%, transparent 40%),
+    radial-gradient(circle at 85% 75%, rgba(212, 175, 55, 0.12) 0%, transparent 40%),
+    linear-gradient(180deg, rgba(10, 8, 8, 0.98) 0%, rgba(20, 17, 16, 0.99) 100%);
+  background-attachment: fixed;
+  min-height: 100vh;
+}
+
+/* Custom Luxury Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: #110e0d;
+}
+::-webkit-scrollbar-thumb {
+  background: #3d342f;
+  border-radius: 4px;
+  border: 1px solid rgba(212, 175, 55, 0.2);
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-gold-deep);
+}
+
+/* Selection Highlight */
+::selection {
+  background: var(--color-wine-rich);
+  color: var(--color-gold-light);
+}
+
+/* Luxury Typography Classes */
+.font-serif-luxury {
+  font-family: var(--font-serif);
+}
+.font-editorial-luxury {
+  font-family: var(--font-editorial);
+}
+.font-crest-luxury {
+  font-family: var(--font-crest);
+}
+
+/* Metallic & Gold Text Gradients */
+.text-gold-gradient {
+  background: linear-gradient(135deg, #fff3cf 0%, #d4af37 45%, #f1d789 65%, #9a7629 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+.text-wine-gradient {
+  background: linear-gradient(135deg, #f08b98 0%, #b82b41 50%, #63121f 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  display: inline-block;
+}
+
+/* Luxury Card Glassmorphism */
+.glass-luxury {
+  background: rgba(22, 18, 17, 0.78);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(212, 175, 55, 0.22);
+  box-shadow: 0 16px 36px -10px rgba(0, 0, 0, 0.65), 0 0 1px 1px rgba(212, 175, 55, 0.1) inset;
+}
+
+.glass-luxury:hover {
+  border-color: rgba(212, 175, 55, 0.45);
+  box-shadow: 0 20px 42px -8px rgba(0, 0, 0, 0.75), 0 0 16px rgba(212, 175, 55, 0.18);
+  transition: all 0.35s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.glass-wine {
+  background: linear-gradient(145deg, rgba(53, 8, 15, 0.6) 0%, rgba(20, 17, 16, 0.85) 100%);
+  backdrop-filter: blur(12px);
+  border: 1px solid rgba(138, 25, 44, 0.35);
+  box-shadow: 0 12px 30px -10px rgba(99, 18, 31, 0.35);
+}
+
+/* Gold border glow */
+.gold-glow {
+  box-shadow: 0 0 24px -4px rgba(212, 175, 55, 0.35);
+}
+
+/* Subtle Shimmer Animation */
+@keyframes goldShimmer {
+  0% { background-position: -200% 0; }
+  100% { background-position: 200% 0; }
+}
+
+.gold-shimmer-btn {
+  background: linear-gradient(90deg, #d4af37 0%, #fff2cb 35%, #d4af37 60%, #9a7629 100%);
+  background-size: 200% auto;
+  animation: goldShimmer 5s linear infinite;
+  color: #141110;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  transition: transform 0.2s ease, box-shadow 0.2s ease;
+}
+
+.gold-shimmer-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 10px 25px -5px rgba(212, 175, 55, 0.5);
+}
+
+/* Presentation Deck Mode vs Scroll Mode */
+body.mode-presentation {
+  overflow: hidden;
+  height: 100vh;
+}
+
+body.mode-presentation .presentation-container {
+  display: block;
+  height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+body.mode-presentation .scroll-container {
+  display: none !important;
+}
+
+body.mode-scroll {
+  overflow-y: auto;
+  height: auto;
+}
+
+body.mode-scroll .presentation-container {
+  display: none !important;
+}
+
+body.mode-scroll .scroll-container {
+  display: block;
+}
+
+/* Slide Transition Animations in Presentation Mode */
+.slide-item {
+  position: absolute;
+  inset: 0;
+  opacity: 0;
+  pointer-events: none;
+  visibility: hidden;
+  transform: scale(0.97) translateY(12px);
+  transition: opacity 0.5s cubic-bezier(0.16, 1, 0.3, 1), transform 0.5s cubic-bezier(0.16, 1, 0.3, 1), visibility 0.5s;
+}
+
+.slide-item.active-slide {
+  opacity: 1;
+  pointer-events: auto;
+  visibility: visible;
+  transform: scale(1) translateY(0);
+  z-index: 10;
+}
+
+/* Range Slider Styling for Financial Calculator */
+input[type="range"] {
+  -webkit-appearance: none;
+  appearance: none;
+  background: #2b2420;
+  height: 7px;
+  border-radius: 4px;
+  outline: none;
+  border: 1px solid rgba(212, 175, 55, 0.3);
+}
+
+input[type="range"]::-webkit-slider-thumb {
+  -webkit-appearance: none;
+  appearance: none;
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff3cf 0%, #d4af37 60%, #9a7629 100%);
+  cursor: pointer;
+  border: 2px solid #141110;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+  transition: transform 0.15s ease;
+}
+
+input[type="range"]::-webkit-slider-thumb:hover {
+  transform: scale(1.2);
+  box-shadow: 0 0 16px rgba(212, 175, 55, 0.95);
+}
+
+input[type="range"]::-moz-range-thumb {
+  width: 22px;
+  height: 22px;
+  border-radius: 50%;
+  background: radial-gradient(circle, #fff3cf 0%, #d4af37 60%, #9a7629 100%);
+  cursor: pointer;
+  border: 2px solid #141110;
+  box-shadow: 0 0 10px rgba(212, 175, 55, 0.7);
+}
+
+/* Subtle badge floating animation */
+@keyframes floatGentle {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-6px); }
+}
+
+.floating-badge {
+  animation: floatGentle 4s ease-in-out infinite;
+}
+
+/* Print Stylesheet for Pitch Deck Export (PDF / A4 Landscape) */
+@media print {
+  @page {
+    size: A4 landscape;
+    margin: 0.8cm;
+  }
+
+  body {
+    background: #0f0c0b !important;
+    color: #f5f2ea !important;
+    -webkit-print-color-adjust: exact !important;
+    print-color-adjust: exact !important;
+    font-size: 11pt;
+  }
+
+  .no-print,
+  .presentation-controls,
+  .nav-header-fixed,
+  .audio-toggle-btn,
+  .fullscreen-btn {
+    display: none !important;
+  }
+
+  /* Force display of all slides as successive pages */
+  body.mode-presentation .presentation-container,
+  body.mode-scroll .scroll-container {
+    display: block !important;
+    height: auto !important;
+    overflow: visible !important;
+  }
+
+  .slide-item {
+    position: relative !important;
+    inset: auto !important;
+    opacity: 1 !important;
+    visibility: visible !important;
+    transform: none !important;
+    page-break-after: always !important;
+    break-after: page !important;
+    min-height: 94vh !important;
+    display: flex !important;
+    flex-direction: column !important;
+    justify-content: center !important;
+    padding: 1.5cm 1cm !important;
+  }
+
+  .glass-luxury {
+    background: #181413 !important;
+    border: 1px solid #7a6327 !important;
+  }
+}
