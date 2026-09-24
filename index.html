@@ -1,174 +1,121 @@
 <!DOCTYPE html>
-<html lang="es" class="scroll-smooth">
+<html lang="es">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Estancia El Búho × Mysterik Producciones | Desembarco en Mendoza</title>
-  <meta name="description" content="Propuesta comercial y ejecutiva del desembarco de Estancia El Búho en Mendoza. Concesiones 'Que cada jamón valga', capacitaciones, cobertura de contenido para redes y alianzas con Torrent y Martino Wines.">
+  <meta name="description" content="Propuesta comercial y ejecutiva del desembarco de Estancia El Búho en Mendoza. Concesiones 'Que cada jamón valga', capacitaciones, cobertura en redes y alianzas con Torrent y Martino Wines.">
 
   <!-- Favicon -->
   <link rel="icon" type="image/svg+xml" href="assets/logo-elbuho.svg">
 
-  <!-- Google Fonts: Plus Jakarta Sans & Playfair Display -->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=Playfair+Display:wght@600;700;800&display=swap" rel="stylesheet">
-
-  <!-- FontAwesome Icons -->
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
-  <!-- Tailwind CSS CDN -->
-  <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      theme: {
-        extend: {
-          colors: {
-            wine: {
-              700: '#991b1b',
-              800: '#7f1d1d',
-              900: '#58111a',
-              950: '#380a11'
-            },
-            amber: {
-              500: '#d97706',
-              600: '#b45309'
-            },
-            slate: {
-              850: '#141a24',
-              900: '#0f141d',
-              950: '#0a0d14'
-            }
-          },
-          fontFamily: {
-            sans: ['"Plus Jakarta Sans"', 'sans-serif'],
-            serif: ['"Playfair Display"', 'serif']
-          }
-        }
-      }
-    }
-  </script>
-
-  <!-- Custom CSS -->
-  <link rel="stylesheet" href="css/styles.css">
+  <!-- Estilos CSS Puros y Autónomos -->
+  <link rel="stylesheet" href="css/styles.css?v=3.0">
 </head>
-<body class="bg-slate-950 text-slate-100 antialiased font-sans">
+<body>
 
   <!-- ===================================================================
        HEADER DE NAVEGACIÓN FIJO
        =================================================================== -->
-  <header class="fixed top-0 left-0 w-full z-50 bg-slate-950/95 backdrop-blur-md border-b border-slate-800">
-    <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between">
+  <header class="site-header">
+    <div class="container header-inner">
       
-      <!-- Logos Alianza -->
-      <a href="#inicio" class="flex items-center gap-3">
-        <img src="assets/logo-elbuho.svg" alt="Estancia El Búho" class="h-8 sm:h-9 w-auto">
-        <span class="text-slate-600 font-light hidden sm:inline">|</span>
-        <img src="assets/logo-mysterik.svg" alt="Mysterik Producciones" class="h-6 w-auto hidden sm:inline">
+      <!-- Marca & Título -->
+      <a href="#inicio" class="brand-wrapper">
+        <img src="assets/logo-elbuho.svg" alt="Estancia El Búho" class="brand-logo-img">
+        <div class="brand-title">
+          <span class="brand-name">EL BÚHO × MYSTERIK</span>
+          <span class="brand-subtitle">Mendoza • Cuyo</span>
+        </div>
       </a>
 
-      <!-- Navegación Principal -->
-      <nav class="hidden lg:flex items-center gap-6 text-xs uppercase tracking-wider font-semibold text-slate-300">
-        <a href="#origen" class="hover:text-amber-400 transition-colors">Origen</a>
-        <a href="#propuesta" class="hover:text-amber-400 transition-colors">Propuesta</a>
-        <a href="#capacitaciones" class="hover:text-amber-400 transition-colors">Capacitaciones</a>
-        <a href="#concesion" class="text-amber-400 hover:text-amber-300 transition-colors flex items-center gap-1.5 font-bold">
-          <i class="fa-solid fa-coins text-xs"></i> Concesión Pasiva
-        </a>
-        <a href="#cobertura" class="hover:text-amber-400 transition-colors">Cobertura en Redes</a>
-        <a href="#alianzas" class="hover:text-amber-400 transition-colors">Torrent & Martino</a>
-        <a href="#productos" class="hover:text-amber-400 transition-colors">Productos</a>
+      <!-- Menú Desktop -->
+      <nav>
+        <ul class="nav-menu">
+          <li><a href="#origen" class="nav-link">Origen</a></li>
+          <li><a href="#propuesta" class="nav-link">Propuesta</a></li>
+          <li><a href="#capacitaciones" class="nav-link">Capacitaciones</a></li>
+          <li><a href="#concesion" class="nav-link highlight">Concesión Pasiva</a></li>
+          <li><a href="#redes" class="nav-link">Redes Sociales</a></li>
+          <li><a href="#alianzas" class="nav-link">Torrent & Martino</a></li>
+          <li><a href="#productos" class="nav-link">Productos</a></li>
+        </ul>
       </nav>
 
-      <!-- Contacto Directo WhatsApp -->
-      <div class="flex items-center gap-3">
-        <a href="https://wa.me/5492617094195?text=Hola,%20me%20comunico%20desde%20la%20presentaci%C3%B3n%20web%20de%20Estancia%20El%20B%C3%BAho%20en%20Mendoza" target="_blank" class="flex items-center gap-2 bg-emerald-600 hover:bg-emerald-500 text-white text-xs font-bold px-3.5 py-2 rounded-lg transition-colors shadow-sm">
-          <i class="fa-brands fa-whatsapp text-sm"></i>
-          <span>+54 9 261 709-4195</span>
+      <!-- Acción WhatsApp Directa -->
+      <div class="header-actions">
+        <a href="https://wa.me/5492617094195?text=Hola,%20me%20comunico%20desde%20la%20presentaci%C3%B3n%20web%20de%20Estancia%20El%20B%C3%BAho%20en%20Mendoza" target="_blank" class="btn-whatsapp-header">
+          <span>WhatsApp:</span> +54 9 261 709-4195
         </a>
-
-        <!-- Botón Menú Móvil -->
-        <button id="btn-mobile-menu" class="lg:hidden p-2 text-slate-400 hover:text-white focus:outline-none">
-          <i class="fa-solid fa-bars text-lg"></i>
-        </button>
+        <button id="btn-menu-toggle" class="btn-menu-toggle" aria-label="Abrir menú">☰</button>
       </div>
 
     </div>
-
-    <!-- Menú Desplegable Móvil -->
-    <div id="mobile-menu" class="hidden lg:hidden bg-slate-900 border-b border-slate-800 px-4 py-4 space-y-3 text-sm font-medium">
-      <a href="#origen" class="block text-slate-300 hover:text-amber-400">Origen y Calidad</a>
-      <a href="#propuesta" class="block text-slate-300 hover:text-amber-400">Propuesta Regional</a>
-      <a href="#capacitaciones" class="block text-slate-300 hover:text-amber-400">Charlas y Capacitaciones</a>
-      <a href="#concesion" class="block text-amber-400 font-semibold">Red de Concesión ("Que Cada Jamón Valga")</a>
-      <a href="#cobertura" class="block text-slate-300 hover:text-amber-400">Cobertura de Contenido para Redes</a>
-      <a href="#alianzas" class="block text-slate-300 hover:text-amber-400">Alianzas: Torrent & Martino Wines</a>
-      <a href="#productos" class="block text-slate-300 hover:text-amber-400">Catálogo de Productos</a>
-      <a href="#contacto" class="block text-emerald-400 font-bold pt-2 border-t border-slate-800">
-        <i class="fa-brands fa-whatsapp mr-1"></i> Contactar: +54 9 261 709-4195
-      </a>
-    </div>
   </header>
+
+  <!-- Menú Móvil Desplegable -->
+  <nav id="mobile-nav" class="mobile-nav">
+    <a href="#origen" class="nav-link">Origen y Calidad</a>
+    <a href="#propuesta" class="nav-link">Propuesta Regional</a>
+    <a href="#capacitaciones" class="nav-link">Charlas y Capacitaciones</a>
+    <a href="#concesion" class="nav-link highlight">Concesión Pasiva ("Que Cada Jamón Valga")</a>
+    <a href="#redes" class="nav-link">Cobertura de Contenido en Redes</a>
+    <a href="#alianzas" class="nav-link">Alianzas: Torrent & Martino Wines</a>
+    <a href="#productos" class="nav-link">Catálogo de Productos</a>
+    <a href="https://wa.me/5492617094195?text=Hola,%20quiero%20coordinar%20una%20reuni%C3%B3n%20por%20Estancia%20El%20B%C3%BAho%20en%20Mendoza" target="_blank" class="nav-link" style="color:#10b981; font-weight:bold;">
+      WhatsApp Directo: +54 9 261 709-4195
+    </a>
+  </nav>
 
 
   <!-- ===================================================================
        SECCIÓN 1: HERO / PORTADA EJECUTIVA
        =================================================================== -->
-  <section id="inicio" class="pt-28 pb-16 sm:pt-36 sm:pb-24 border-b border-slate-800 relative overflow-hidden">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="inicio" class="section-hero">
+    <div class="container">
       
-      <div class="max-w-3xl">
-        <!-- Badge institucional -->
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded-md bg-wine-900/40 border border-wine-700/60 text-xs font-semibold text-rose-200 mb-6">
-          <i class="fa-solid fa-location-dot text-amber-500"></i> Desembarco Comercial & Regional • Mendoza
-        </div>
-
-        <h1 class="text-3xl sm:text-5xl lg:text-6xl font-serif font-black tracking-tight leading-tight text-white mb-6">
-          Estancia El Búho en Mendoza
-        </h1>
-
-        <p class="text-base sm:text-lg text-slate-300 leading-relaxed mb-6">
-          El jamón crudo artesanal de <strong>Agua de Oro (Córdoba)</strong>, referente absoluto de la charcutería argentina, llega a la provincia de la mano de <strong>Mysterik Producciones</strong> para desplegar capacitaciones de sala, red de concesiones, venta selecta y cobertura audiovisual en redes.
-        </p>
-
-        <!-- CTA Buttons vinculados a WhatsApp -->
-        <div class="flex flex-wrap items-center gap-3 sm:gap-4 mb-10">
-          <a href="#concesion" class="bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold px-6 py-3 rounded-lg text-sm transition-colors flex items-center gap-2 shadow-md">
-            <i class="fa-solid fa-coins"></i>
-            <span>Modelo de Concesión Pasiva</span>
-          </a>
-
-          <button onclick="contactWhatsApp('concesion')" class="bg-emerald-600 hover:bg-emerald-500 text-white font-bold px-6 py-3 rounded-lg text-sm transition-colors flex items-center gap-2 shadow-md">
-            <i class="fa-brands fa-whatsapp text-base"></i>
-            <span>Hablar por WhatsApp (+54 9 261 709-4195)</span>
-          </button>
-        </div>
+      <div class="section-tag tag-wine">
+        Desembarco Comercial & Regional • Mendoza
       </div>
 
-      <!-- Resumen en 4 bloques concretos -->
-      <div class="grid grid-cols-2 md:grid-cols-4 gap-4 pt-6 border-t border-slate-800/80">
-        <div class="p-4 rounded-lg bg-slate-900/80 border border-slate-800">
-          <span class="text-xs uppercase tracking-wider text-slate-400 block mb-1">Tradición</span>
-          <strong class="text-sm sm:text-base text-white block">Desde 1948</strong>
-          <span class="text-xs text-amber-500">Agua de Oro, Córdoba</span>
-        </div>
+      <h1 class="hero-title">
+        Estancia El Búho en Mendoza
+      </h1>
 
-        <div class="p-4 rounded-lg bg-slate-900/80 border border-slate-800">
-          <span class="text-xs uppercase tracking-wider text-slate-400 block mb-1">Maduración</span>
-          <strong class="text-sm sm:text-base text-white block">18 a 24 Meses</strong>
-          <span class="text-xs text-slate-400">100% cura natural</span>
-        </div>
+      <p class="hero-subtitle">
+        El jamón crudo artesanal de <strong>Agua de Oro (Córdoba)</strong>, referente histórico de la charcutería nacional, llega a la provincia de Mendoza con el respaldo comercial, estratégico y de contenidos de <strong>Mysterik Producciones</strong>.
+      </p>
 
-        <div class="p-4 rounded-lg bg-slate-900/80 border border-slate-800">
-          <span class="text-xs uppercase tracking-wider text-slate-400 block mb-1">Modelo Comercial</span>
-          <strong class="text-sm sm:text-base text-white block">Concesión Activa</strong>
-          <span class="text-xs text-emerald-400">Ingresos pasivos en red</span>
-        </div>
+      <div class="hero-cta-group">
+        <a href="#concesion" class="btn-primary">
+          Ver Modelo de Concesión Pasiva
+        </a>
+        <a href="https://wa.me/5492617094195?text=Hola,%20me%20comunico%20para%20conocer%20la%20propuesta%20de%20Estancia%20El%20B%C3%BAho%20en%20Mendoza" target="_blank" class="btn-secondary">
+          Contactar por WhatsApp (+54 9 261 709-4195)
+        </a>
+      </div>
 
-        <div class="p-4 rounded-lg bg-slate-900/80 border border-slate-800">
-          <span class="text-xs uppercase tracking-wider text-slate-400 block mb-1">Puntos Clave</span>
-          <strong class="text-sm sm:text-base text-white block">Torrent & Martino</strong>
-          <span class="text-xs text-slate-400">Distribución & Bodega</span>
+      <!-- 4 Métricas Clave -->
+      <div class="metrics-grid">
+        <div class="metric-card">
+          <span class="label">Tradición</span>
+          <span class="value">Desde 1948</span>
+          <span class="sub">Agua de Oro, Córdoba</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Maduración</span>
+          <span class="value">18 a 24 Meses</span>
+          <span class="sub">100% cura natural</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Modelo Comercial</span>
+          <span class="value">Concesión Activa</span>
+          <span class="sub" style="color:var(--color-green);">Ingresos pasivos en red</span>
+        </div>
+        <div class="metric-card">
+          <span class="label">Puntos Estratégicos</span>
+          <span class="value">Torrent & Martino</span>
+          <span class="sub">Distribución & Bodega</span>
         </div>
       </div>
 
@@ -179,47 +126,39 @@
   <!-- ===================================================================
        SECCIÓN 2: ORIGEN Y CALIDAD (ESTANCIA EL BÚHO)
        =================================================================== -->
-  <section id="origen" class="py-16 sm:py-20 border-b border-slate-800 bg-slate-900/40">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="origen">
+    <div class="container">
       
-      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 lg:gap-12 items-center">
-        <div class="lg:col-span-7 space-y-4">
-          <span class="text-xs uppercase tracking-wider font-bold text-amber-500 block">Legado Familiar • Sierras Chicas</span>
-          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white leading-tight">
-            El Estándar Supremo del Jamón Crudo Argentino
-          </h2>
-          <p class="text-slate-300 text-sm sm:text-base leading-relaxed">
-            Fundada en 1948 por Don Víctor Fernández y continuada hoy por la tercera generación, <strong>Estancia El Búho</strong> es considerada por cocineros y críticos gastronómicos como el benchmark indiscutible del jamón estilo Parma/Serrano en Sudamérica.
+      <div class="section-header">
+        <div class="section-tag tag-amber">Legado Artesanal • Sierras Chicas de Córdoba</div>
+        <h2 class="section-title">El Estándar Supremo del Jamón Crudo Argentino</h2>
+        <p class="section-desc">
+          Fundada en 1948 por Don Víctor Fernández y mantenida viva por la tercera generación familiar, Estancia El Búho es el referente ineludible del jamón crudo estacionado en Sudamérica.
+        </p>
+      </div>
+
+      <div class="grid-2">
+        <div class="card">
+          <h3 class="card-title">Proceso 100% Natural de 18 a 24 Meses</h3>
+          <p class="card-text">
+            A diferencia de la producción industrial, en El Búho no se emplean cámaras forzadas, salmueras líquidas ni aceleradores químicos. La maduración se realiza pacientemente aprovechando el aire seco y los vientos limpios de las sierras cordobesas.
           </p>
-          
-          <div class="grid grid-cols-1 sm:grid-cols-2 gap-3 pt-2">
-            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300">
-              <strong class="text-white block mb-1"><i class="fa-solid fa-clock text-amber-500 mr-1.5"></i> Tiempo y Paciencia:</strong>
-              Estacionamiento mínimo de 18 a 24 meses en cámaras serranas naturales.
-            </div>
-            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300">
-              <strong class="text-white block mb-1"><i class="fa-solid fa-leaf text-emerald-400 mr-1.5"></i> Cero Químicos:</strong>
-              Sin salmueras industriales, conservantes artificiales ni aditivos acelerantes.
-            </div>
-            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300">
-              <strong class="text-white block mb-1"><i class="fa-solid fa-gem text-rose-400 mr-1.5"></i> Grasa Noble:</strong>
-              Veteado intramuscular suave que funde en boca con sutil dulzor.
-            </div>
-            <div class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 text-xs text-slate-300">
-              <strong class="text-white block mb-1"><i class="fa-solid fa-bread-slice text-amber-400 mr-1.5"></i> El Servicio Tradicional:</strong>
-              Cortado al momento en lonchas finas con pan de campo y manteca.
-            </div>
-          </div>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Perniles seleccionados de cerdo pesado de excelente conformación.</li>
+            <li><span class="bullet">✓</span> Solamente sal marina natural y tiempo en secadero.</li>
+            <li><span class="bullet">✓</span> Grasa intramuscular noble que funde suavemente al contacto con el paladar.</li>
+          </ul>
         </div>
 
-        <div class="lg:col-span-5">
-          <div class="b2b-card p-5 border border-slate-800">
-            <img src="https://images.unsplash.com/photo-1544025162-d76694265947?q=80&w=800&auto=format&fit=crop" alt="Jamón serrano artesanal" class="w-full h-56 object-cover rounded-lg mb-4">
-            <div class="flex items-center justify-between text-xs text-slate-400">
-              <span>Producto Certificado de Origen</span>
-              <span class="text-amber-500 font-semibold">Agua de Oro (Cba)</span>
-            </div>
-          </div>
+        <div class="card">
+          <h3 class="card-title">El Ritual Tradicional de Agua de Oro</h3>
+          <p class="card-text">
+            El jamón de El Búho es celebrado por los chefs y críticos gastronómicos más respetados del país por su color rojo rubí, su bajo tenor salino y sus notas sutiles y dulces.
+          </p>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Tradicionalmente servido en lonchas delgadas con pan de campo y manteca fresca.</li>
+            <li><span class="bullet">✓</span> Un producto de culto gastronómico que hoy desembarca con stock formal en Mendoza.</li>
+          </ul>
         </div>
       </div>
 
@@ -228,63 +167,47 @@
 
 
   <!-- ===================================================================
-       SECCIÓN 3: PROPUESTA Y EJES DE DESEMBARCO
+       SECCIÓN 3: PROPUESTA Y EJES DE NEGOCIO
        =================================================================== -->
-  <section id="propuesta" class="py-16 sm:py-20 border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="propuesta">
+    <div class="container">
       
-      <div class="max-w-2xl mb-12">
-        <span class="text-xs uppercase tracking-wider font-bold text-amber-500 block mb-1">Estrategia Regional</span>
-        <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mb-3">
-          Los 4 Ejes del Negocio en Mendoza
-        </h2>
-        <p class="text-slate-300 text-sm">
-          Mysterik Producciones articula la operación comercial, logística y de marketing para garantizar volumen, presencia de marca y rentabilidad.
+      <div class="section-header">
+        <div class="section-tag tag-wine">Estrategia Regional</div>
+        <h2 class="section-title">Los 4 Ejes del Negocio en Mendoza</h2>
+        <p class="section-desc">
+          Mysterik Producciones lidera la coordinación operativa, comercial y de comunicación en el territorio mendocino para asegurar presencia de marca y rotación continua.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-        
-        <div class="b2b-card p-5">
-          <div class="w-10 h-10 rounded-lg bg-amber-500/20 text-amber-400 flex items-center justify-center mb-4 text-base font-bold">
-            1
-          </div>
-          <h3 class="text-base font-bold text-white mb-2">Charlas & Capacitaciones</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Formación a brigadas de cocina y camareros en técnica de corte a cuchillo, protocolo de sala y maridaje con vinos de guarda.
+      <div class="grid-4">
+        <div class="card">
+          <h3 class="card-title">1. Capacitaciones</h3>
+          <p class="card-text">
+            Talleres técnicos de corte a cuchillo tradicional, protocolos de sala, aprovechamiento del 100% de la pieza y maridajes enológicos.
           </p>
         </div>
 
-        <div class="b2b-card p-5 border-amber-600/50 bg-slate-900">
-          <div class="w-10 h-10 rounded-lg bg-wine-700/30 text-rose-300 flex items-center justify-center mb-4 text-base font-bold">
-            2
-          </div>
-          <h3 class="text-base font-bold text-amber-400 mb-2">Red de Concesiones</h3>
-          <p class="text-xs text-slate-300 leading-relaxed">
-            "Que cada jamón valga": locaciones gastronómicas reciben jamonera y pernil sin costo de stock, generando ingresos pasivos recurrentes.
+        <div class="card" style="border-color: var(--color-amber);">
+          <h3 class="card-title" style="color: var(--color-amber);">2. Concesión Pasiva</h3>
+          <p class="card-text">
+            Modelo "Que cada jamón valga": locaciones gastronómicas reciben jamonera y pernil sin costo de stock, generando ingresos pasivos en red.
           </p>
         </div>
 
-        <div class="b2b-card p-5">
-          <div class="w-10 h-10 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center mb-4 text-base font-bold">
-            3
-          </div>
-          <h3 class="text-base font-bold text-white mb-2">Cobertura en Redes</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Producción de fotos y Reels profesionales por Mysterik en cada local adherido para impulsar la demanda y traccionar clientes.
+        <div class="card">
+          <h3 class="card-title">3. Cobertura en Redes</h3>
+          <p class="card-text">
+            Filmación y fotografía profesional in-situ en cada punto de venta para traccionar clientes a través de Instagram, TikTok y campañas de pauta.
           </p>
         </div>
 
-        <div class="b2b-card p-5">
-          <div class="w-10 h-10 rounded-lg bg-slate-800 text-slate-300 flex items-center justify-center mb-4 text-base font-bold">
-            4
-          </div>
-          <h3 class="text-base font-bold text-white mb-2">Puntos de Venta & Bodegas</h3>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Alianzas consolidadas como la firma <strong>Torrent</strong> (fiambrería gourmet) y <strong>Martino Wines</strong> (enoturismo y gastronomía).
+        <div class="card">
+          <h3 class="card-title">4. Alianzas Clave</h3>
+          <p class="card-text">
+            Vinculación con canales de prestigio como la firma centenaria <strong>Torrent</strong> y la reconocida <strong>Bodega Martino Wines</strong>.
           </p>
         </div>
-
       </div>
 
     </div>
@@ -294,56 +217,60 @@
   <!-- ===================================================================
        SECCIÓN 4: CHARLAS Y CAPACITACIONES
        =================================================================== -->
-  <section id="capacitaciones" class="py-16 sm:py-20 border-b border-slate-800 bg-slate-900/30">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="capacitaciones">
+    <div class="container">
       
-      <div class="flex flex-col md:flex-row md:items-end justify-between mb-10 pb-4 border-b border-slate-800">
-        <div>
-          <span class="text-xs uppercase tracking-wider font-bold text-amber-500 block mb-1">Eje I • Profesionalización</span>
-          <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white">
-            Capacitaciones y Masterclasses
-          </h2>
-        </div>
-        <button onclick="contactWhatsApp('capacitacion')" class="mt-4 md:mt-0 inline-flex items-center gap-2 text-xs font-bold text-emerald-400 hover:text-emerald-300">
-          <i class="fa-brands fa-whatsapp"></i> Coordinar taller para mi personal →
-        </button>
+      <div class="section-header">
+        <div class="section-tag tag-amber">Eje I • Profesionalización de Sala</div>
+        <h2 class="section-title">Charlas y Capacitaciones Técnicas</h2>
+        <p class="section-desc">
+          El jamón crudo de guarda requiere técnica para lucir en el salón, evitar desperdicios y elevar el ticket promedio del establecimiento.
+        </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
-        
-        <div class="b2b-card p-6">
-          <i class="fa-solid fa-kitchen-set text-2xl text-amber-500 mb-4 block"></i>
-          <h3 class="text-base font-bold text-white mb-2">Corte a Cuchillo Tradicional</h3>
-          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
-            <li>• Colocación y fijación correcta en jamonera.</li>
-            <li>• Técnica de hoja para lonchas delgadas y traslúcidas.</li>
-            <li>• Rendimiento del 100% de la pieza (sin desperdicio).</li>
-            <li>• Limpieza de grasa externa y conservación continua.</li>
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="card-title">Maestría de Corte a Cuchillo</h3>
+          <p class="card-text">
+            Instrucción práctica para personal de cocina y salón. Sujeción en jamonera, uso del cuchillo jamonero flexible, espesor traslúcido y aprovechamiento integral de maza, contramaza y babilla.
+          </p>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Rendimiento del 100% de la pieza.</li>
+            <li><span class="bullet">✓</span> Espectáculo visual en vivo en el salón.</li>
           </ul>
         </div>
 
-        <div class="b2b-card p-6">
-          <i class="fa-solid fa-wine-glass text-2xl text-rose-500 mb-4 block"></i>
-          <h3 class="text-base font-bold text-white mb-2">Cata Sensorial & Maridaje</h3>
-          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
-            <li>• Armonización de la grasa noble con vinos de Mendoza.</li>
-            <li>• Combinación con espumantes tradicionales y blancos con madera.</li>
-            <li>• Sinergia con varietales de guarda como Cabernet Franc y Malbec.</li>
-            <li>• Degustaciones comparativas con personal de salón.</li>
+        <div class="card">
+          <h3 class="card-title">Cata Sensorial & Maridaje</h3>
+          <p class="card-text">
+            Capacitación sobre cómo la grasa noble y la salinidad sutil del jamón interactúan con los vinos de Mendoza: espumantes tradicionales, blancos con crianza y tintos de perfil elegante.
+          </p>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Armonización con varietales de guarda.</li>
+            <li><span class="bullet">✓</span> Degustación guiada para brigadas.</li>
           </ul>
         </div>
 
-        <div class="b2b-card p-6">
-          <i class="fa-solid fa-chart-line text-2xl text-emerald-400 mb-4 block"></i>
-          <h3 class="text-base font-bold text-white mb-2">Argumentario & Venta en Sala</h3>
-          <ul class="text-xs text-slate-300 space-y-2 leading-relaxed">
-            <li>• Cómo contar la historia de Agua de Oro al comensal.</li>
-            <li>• Venta sugestiva de entradas y tablas compartidas.</li>
-            <li>• Impacto directo en el incremento del ticket promedio (+25% a +35%).</li>
-            <li>• Fidelización del cliente corporativo y enoturista.</li>
+        <div class="card">
+          <h3 class="card-title">Storytelling y Elevación de Ticket</h3>
+          <p class="card-text">
+            Entrenamiento a mozos y sommeliers para relatar el origen de Agua de Oro al comensal. Venta sugestiva de entradas y tablas que incrementa el consumo del salón entre un 25% y 35%.
+          </p>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Mayor ticket promedio por mesa.</li>
+            <li><span class="bullet">✓</span> Fidelización de clientes exigentes.</li>
           </ul>
         </div>
+      </div>
 
+      <div class="action-banner">
+        <div>
+          <strong style="color:#ffffff; font-size:1rem; display:block; margin-bottom:4px;">¿Querés organizar una capacitación para el personal de tu restaurante o bodega?</strong>
+          <span style="color:var(--text-muted); font-size:0.85rem;">Coordinamos fecha y temario adaptado a tu brigada de servicio.</span>
+        </div>
+        <a href="https://wa.me/5492617094195?text=Hola,%20me%20interesa%20coordinar%20una%20capacitaci%C3%B3n%20de%20corte%20a%20cuchillo%20para%20mi%20establecimiento" target="_blank" class="btn-primary" style="white-space:nowrap;">
+          Coordinar Capacitación
+        </a>
       </div>
 
     </div>
@@ -351,145 +278,118 @@
 
 
   <!-- ===================================================================
-       SECCIÓN 5: MODELO ESTRELLA "QUE CADA JAMÓN VALGA" (CONCESIONES E INGRESOS PASIVOS)
+       SECCIÓN 5: MODELO "QUE CADA JAMÓN VALGA" (CONCESIÓN E INGRESOS PASIVOS)
        =================================================================== -->
-  <section id="concesion" class="py-16 sm:py-24 border-b border-slate-800 relative">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="concesion">
+    <div class="container">
       
-      <!-- Encabezado de Sección -->
-      <div class="max-w-3xl mb-12">
-        <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-amber-500/20 text-amber-300 text-xs font-bold uppercase tracking-wider mb-3">
-          <i class="fa-solid fa-coins"></i> Sección Estrella
-        </div>
-        <h2 class="text-3xl sm:text-5xl font-serif font-black text-white tracking-tight mb-4">
-          "Que Cada Jamón Valga"
-        </h2>
-        <p class="text-base text-slate-300 leading-relaxed">
-          Dejando jamones en concesión en locaciones gastronómicas estratégicas de Mendoza (wine bars, hoteles boutique, restaurantes y bodegas), creás una <strong>red de ingresos pasivos recurrentes</strong> con cero fricción de entrada para el local.
+      <div class="section-header">
+        <div class="section-tag tag-amber">Sección Estrella • Modelo Comercial</div>
+        <h2 class="section-title">"Que Cada Jamón Valga"</h2>
+        <p class="section-desc">
+          Dejando jamones en concesión en locaciones gastronómicas estratégicas de Mendoza, creás una <strong>red de ingresos pasivos recurrentes</strong> sin fricción ni barrera de entrada para el local.
         </p>
       </div>
 
-      <!-- Cuadro comparativo Win-Win -->
-      <div class="grid grid-cols-1 md:grid-cols-2 gap-6 mb-12">
-        
-        <!-- Para el Local -->
-        <div class="b2b-card p-6 border-l-4 border-l-amber-500">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs uppercase tracking-wider font-bold text-amber-400">Para el Establecimiento Anfitrión</span>
-            <span class="px-2 py-0.5 text-[11px] font-bold rounded bg-amber-500/20 text-amber-300">Cero Inversión</span>
+      <div class="grid-2" style="margin-bottom: 30px;">
+        <div class="card" style="border-left: 4px solid var(--color-amber);">
+          <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--color-amber); margin-bottom:8px;">
+            Para el Establecimiento Anfitrión
           </div>
-          <h3 class="text-lg font-bold text-white mb-2">Producto de Lujo sin Comprar Stock</h3>
-          <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-            El restaurante u hotel recibe la jamonera profesional de forja y la pieza seleccionada de Estancia El Búho en comodato total. No inmoviliza capital de trabajo.
+          <h3 class="card-title">Cero Inversión en Stock Inicial</h3>
+          <p class="card-text">
+            El restaurante, wine bar o salón de eventos recibe en comodato la jamonera profesional de forja y la pata seleccionada de Estancia El Búho. No inmoviliza capital.
           </p>
-          <ul class="text-xs text-slate-400 space-y-1.5">
-            <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Paga únicamente las porciones consumidas.</li>
-            <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Margen limpio e inmediato por plato servido.</li>
-            <li><i class="fa-solid fa-check text-amber-500 mr-2"></i> Reposición ágil coordinada por Mysterik Producciones.</li>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Paga únicamente las porciones consumidas.</li>
+            <li><span class="bullet">✓</span> Margen limpio e inmediato por plato servido.</li>
+            <li><span class="bullet">✓</span> Reposición programada puerta a puerta por Mysterik Producciones.</li>
           </ul>
         </div>
 
-        <!-- Para el Inversor / Operador de Red -->
-        <div class="b2b-card p-6 border-l-4 border-l-emerald-500 bg-slate-900">
-          <div class="flex items-center justify-between mb-3">
-            <span class="text-xs uppercase tracking-wider font-bold text-emerald-400">Para el Gestor de la Red</span>
-            <span class="px-2 py-0.5 text-[11px] font-bold rounded bg-emerald-500/20 text-emerald-300">Flujo Pasivo</span>
+        <div class="card" style="border-left: 4px solid var(--color-green); background:#0e1622;">
+          <div style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--color-green); margin-bottom:8px;">
+            Para el Operador / Inversor de Red
           </div>
-          <h3 class="text-lg font-bold text-white mb-2">Ingresos Pasivos Multi-Punto</h3>
-          <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-            Cada pernil colocado es un punto de venta activo facturando diariamente. Se teje una red territorial en Chacras de Coria, Ciudad, Maipú y Valle de Uco sin empleados fijos ni alquileres.
+          <h3 class="card-title">Red de Ingresos Pasivos en Cuyo</h3>
+          <p class="card-text">
+            Cada jamonera colocada es un punto activo que factura a diario. Construís un flujo de caja recurrente en Chacras de Coria, Ciudad, Maipú y Valle de Uco sin empleados fijos ni alquileres comerciales.
           </p>
-          <ul class="text-xs text-slate-400 space-y-1.5">
-            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Rotación mensual continua en los mejores salones.</li>
-            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Respaldo en activo físico de alta cotización.</li>
-            <li><i class="fa-solid fa-check text-emerald-400 mr-2"></i> Ingresos mensuales constantes y auditables.</li>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Rotación constante en polos gastronómicos de alta concurrencia.</li>
+            <li><span class="bullet">✓</span> Respaldo tangible en mercadería de altísima cotización.</li>
+            <li><span class="bullet">✓</span> Ingresos mensuales previsibles y escalables.</li>
           </ul>
         </div>
-
       </div>
 
-      <!-- Calculadora Ejecutiva Limpia -->
-      <div class="b2b-card p-6 sm:p-8 bg-slate-900 border border-slate-700">
-        <div class="flex flex-col sm:flex-row sm:items-center justify-between pb-6 border-b border-slate-800 gap-4">
+      <!-- Calculadora Financiera Sobria -->
+      <div class="calc-wrapper">
+        <div class="calc-header">
           <div>
-            <h3 class="text-lg font-bold text-white">Simulador Financiero de Concesión</h3>
-            <p class="text-xs text-slate-400">Proyección de ingresos pasivos mensuales y anuales basada en el consumo real en sala.</p>
+            <h3 style="color:#ffffff; font-size:1.15rem; font-weight:700;">Simulador Financiero de Concesión</h3>
+            <p style="color:var(--text-muted); font-size:0.8rem;">Estimación de ingresos pasivos mensuales y anuales basada en el consumo por punto.</p>
           </div>
 
-          <!-- Selector ARS / USD -->
-          <div class="inline-flex rounded-md bg-slate-950 p-1 border border-slate-800 text-xs">
-            <button id="btn-curr-ars" class="px-3 py-1 font-bold rounded bg-amber-600 text-white">ARS ($)</button>
-            <button id="btn-curr-usd" class="px-3 py-1 font-medium rounded text-slate-400 hover:text-white">USD (US$)</button>
+          <div class="currency-toggle">
+            <button id="btn-currency-ars" class="currency-btn active">ARS ($)</button>
+            <button id="btn-currency-usd" class="currency-btn">USD (US$)</button>
           </div>
         </div>
 
-        <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 pt-6 items-center">
-          
-          <!-- Controles / Sliders -->
-          <div class="lg:col-span-6 space-y-6">
-            <div>
-              <div class="flex justify-between text-xs font-semibold text-slate-200 mb-2">
-                <span>Puntos / Locaciones en concesión:</span>
-                <span class="text-amber-400 font-bold"><span id="val-locations">6</span> locales</span>
+        <div class="calc-grid">
+          <div>
+            <div class="slider-group">
+              <div class="slider-header">
+                <span style="color:#ffffff;">Puntos / Locaciones en concesión:</span>
+                <span id="lbl-locations" class="val">6 locales</span>
               </div>
-              <input type="range" id="calc-locations" min="1" max="20" step="1" value="6" class="w-full">
-              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
-                <span>1 local (Piloto)</span>
-                <span>10 locales (Consolidada)</span>
-                <span>20 locales (Regional)</span>
-              </div>
+              <input type="range" id="slider-locations" min="1" max="20" step="1" value="6" class="calc-slider">
             </div>
 
-            <div>
-              <div class="flex justify-between text-xs font-semibold text-slate-200 mb-2">
-                <span>Rotación de piezas por local al mes:</span>
-                <span class="text-amber-400 font-bold"><span id="val-rotation">2</span> piezas/mes</span>
+            <div class="slider-group">
+              <div class="slider-header">
+                <span style="color:#ffffff;">Rotación de piezas por local al mes:</span>
+                <span id="lbl-rotation" class="val">2 piezas/mes</span>
               </div>
-              <input type="range" id="calc-rotation" min="0.5" max="4" step="0.5" value="2" class="w-full">
-              <div class="flex justify-between text-[10px] text-slate-500 mt-1">
-                <span>0.5 (Baja)</span>
-                <span>2 (Promedio gastronómico)</span>
-                <span>4 (Alta rotación)</span>
-              </div>
+              <input type="range" id="slider-rotation" min="0.5" max="4" step="0.5" value="2" class="calc-slider">
             </div>
 
-            <div>
-              <div class="flex justify-between text-xs font-semibold text-slate-200 mb-2">
-                <span>Precio porción comensal (70g):</span>
-                <span id="val-price" class="text-amber-400 font-bold">$ 14.500</span>
+            <div class="slider-group" style="margin-bottom:0;">
+              <div class="slider-header">
+                <span style="color:#ffffff;">Precio porción al comensal (70g):</span>
+                <span id="lbl-price" class="val">$ 14.500</span>
               </div>
-              <input type="range" id="calc-price" min="8000" max="24000" step="500" value="14500" class="w-full">
+              <input type="range" id="slider-price" min="8000" max="25000" step="500" value="14500" class="calc-slider">
             </div>
           </div>
 
-          <!-- Métricas de Resultado -->
-          <div class="lg:col-span-6 space-y-4">
-            <div class="p-5 rounded-xl bg-slate-950 border border-slate-800">
-              <span class="text-xs uppercase tracking-wider text-slate-400 block mb-1">Ingreso Pasivo Mensual Neto</span>
-              <div id="out-passive-month" class="text-3xl sm:text-4xl font-bold text-emerald-400 font-mono">
-                $ 2.400.000
+          <div>
+            <div class="calc-result-box">
+              <span style="font-size:0.75rem; text-transform:uppercase; color:var(--text-dim); font-weight:700; display:block;">
+                Ingreso Pasivo Mensual Neto Estimado
+              </span>
+              <div id="res-passive-month" class="calc-big-number">$ 2.400.000</div>
+              <span style="font-size:0.75rem; color:var(--text-muted); display:block; margin-bottom:14px;">
+                Beneficio neto mensual para el operador de la red.
+              </span>
+
+              <div style="display:grid; grid-template-columns:1fr 1fr; gap:10px; font-size:0.8rem; border-top:1px solid var(--border-color); padding-top:12px; margin-bottom:14px;">
+                <div>
+                  <span style="color:var(--text-dim); display:block; font-size:0.7rem;">Retorno Anual Proyectado:</span>
+                  <strong id="res-passive-year" style="color:#ffffff; font-size:0.95rem;">$ 28.800.000</strong>
+                </div>
+                <div>
+                  <span style="color:var(--text-dim); display:block; font-size:0.7rem;">Piezas en Rotación:</span>
+                  <strong id="res-total-jams" style="color:var(--color-amber); font-size:0.95rem;">12 piezas/mes</strong>
+                </div>
               </div>
-              <span class="text-[11px] text-slate-500 block mt-1">Beneficio neto para el operador de la red.</span>
+
+              <a id="btn-wa-simulation" href="#" target="_blank" class="btn-secondary" style="width:100%; justify-content:center; font-size:0.82rem; padding:10px 14px;">
+                Consultar por esta simulación al WhatsApp
+              </a>
             </div>
-
-            <div class="grid grid-cols-2 gap-3 text-xs">
-              <div class="p-3.5 rounded-lg bg-slate-950 border border-slate-800">
-                <span class="text-slate-400 block mb-0.5 text-[10px] uppercase">Retorno Anual Proyectado</span>
-                <strong id="out-passive-year" class="text-base text-white font-mono block">$ 28.800.000</strong>
-              </div>
-
-              <div class="p-3.5 rounded-lg bg-slate-950 border border-slate-800">
-                <span class="text-slate-400 block mb-0.5 text-[10px] uppercase">Piezas Totales en Rotación</span>
-                <strong id="out-total-jams" class="text-base text-amber-400 font-mono block">12 piezas/mes</strong>
-              </div>
-            </div>
-
-            <a id="btn-calc-wa" href="#" target="_blank" class="w-full bg-emerald-600 hover:bg-emerald-500 text-white font-bold py-3 px-4 rounded-lg text-xs uppercase tracking-wider flex items-center justify-center gap-2 transition-colors">
-              <i class="fa-brands fa-whatsapp text-sm"></i>
-              <span>Consultar por esta simulación al +54 9 261 709-4195</span>
-            </a>
           </div>
-
         </div>
 
       </div>
@@ -501,58 +401,60 @@
   <!-- ===================================================================
        SECCIÓN 6: COBERTURA AUDIOVISUAL Y CONTENIDO EN REDES (MYSTERIK)
        =================================================================== -->
-  <section id="cobertura" class="py-16 sm:py-20 border-b border-slate-800 bg-slate-900/50">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="redes">
+    <div class="container">
       
-      <div class="max-w-2xl mb-12">
-        <span class="text-xs uppercase tracking-wider font-bold text-amber-500 block mb-1">Valor Agregado Mysterik Producciones</span>
-        <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mb-3">
-          Cobertura de Contenido para Redes Sociales
-        </h2>
-        <p class="text-slate-300 text-sm">
-          No solo colocamos el jamón en tu salón: <strong>producimos el contenido digital</strong> para atraer comensales y visibilizar tu local en toda la provincia.
+      <div class="section-header">
+        <div class="section-tag tag-green">Valor Agregado Mysterik Producciones</div>
+        <h2 class="section-title">Cobertura de Contenido para Redes Sociales</h2>
+        <p class="section-desc">
+          No solo abastecemos de producto a tu local: <strong>producimos el contenido audiovisual</strong> para generar demanda, seducir comensales y posicionar tu propuesta en toda la provincia.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 md:grid-cols-3 gap-6 mb-8">
-        
-        <div class="b2b-card p-6">
-          <i class="fa-solid fa-video text-2xl text-rose-500 mb-3 block"></i>
-          <h3 class="text-base font-bold text-white mb-2">Producción Audiovisual in-situ</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-3">
-            Equipo de filmación y fotografía profesional en tu restaurante o bodega. Registro en alta definición del ritual de corte a cuchillo, emplatados gourmet y momentos de salón.
+      <div class="grid-3">
+        <div class="card">
+          <h3 class="card-title">Producción Audiovisual in-situ</h3>
+          <p class="card-text">
+            Equipo de filmación y fotografía profesional en tu restaurante o bodega. Registro en alta definición del corte a cuchillo en vivo, emplatados gourmet y ambientación de salón.
           </p>
-          <span class="text-[11px] text-amber-400 font-semibold">• Reels y TikToks de impacto listos para subir.</span>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Reels y videos verticales en 4K listos para publicar.</li>
+            <li><span class="bullet">✓</span> Fotografía de producto con iluminación cuidada.</li>
+          </ul>
         </div>
 
-        <div class="b2b-card p-6">
-          <i class="fa-solid fa-share-nodes text-2xl text-amber-500 mb-3 block"></i>
-          <h3 class="text-base font-bold text-white mb-2">Material para tus Redes Oficiales</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-3">
-            Entregamos piezas gráficas, fotos editadas y videos verticales con la identidad visual de tu marca para alimentar el feed y stories de tu local sin costo extra de producción.
+        <div class="card">
+          <h3 class="card-title">Material para tus Redes Oficiales</h3>
+          <p class="card-text">
+            Entregamos piezas editadas con tu identidad visual para alimentar el feed y stories de tu establecimiento, sin costos adicionales de productoras externas.
           </p>
-          <span class="text-[11px] text-amber-400 font-semibold">• Contenido gastronómico de alto enganche.</span>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Contenido gastronómico de alto enganche y guardados.</li>
+            <li><span class="bullet">✓</span> Frecuencia de material sincronizada con cada reposición.</li>
+          </ul>
         </div>
 
-        <div class="b2b-card p-6">
-          <i class="fa-solid fa-bullhorn text-2xl text-emerald-400 mb-3 block"></i>
-          <h3 class="text-base font-bold text-white mb-2">Pauta y Difusión Regional</h3>
-          <p class="text-xs text-slate-400 leading-relaxed mb-3">
-            Mysterik impulsa campañas geolocalizadas en Mendoza anunciando los puntos adheridos a la experiencia El Búho, además de convocar a prensa y sommeliers influyentes.
+        <div class="card">
+          <h3 class="card-title">Difusión & Pauta Regional en Mendoza</h3>
+          <p class="card-text">
+            Mysterik activa campañas geolocalizadas anunciando los establecimientos que cuentan con jamonera de El Búho, además de coordinar visitas de sommeliers y prensa gastronómica.
           </p>
-          <span class="text-[11px] text-amber-400 font-semibold">• Tráfico real de clientes a tu establecimiento.</span>
+          <ul class="card-list">
+            <li><span class="bullet">✓</span> Tráfico directo de comensales a tu salón.</li>
+            <li><span class="bullet">✓</span> Co-branding en redes gastronómicas de Cuyo.</li>
+          </ul>
         </div>
-
       </div>
 
-      <div class="p-4 rounded-lg bg-slate-900 border border-slate-800 flex flex-wrap items-center justify-between gap-4">
-        <span class="text-xs text-slate-300">
-          ¿Querés coordinar la sesión de fotos y video para la inauguración de la jamonera en tu local?
-        </span>
-        <button onclick="contactWhatsApp('redes')" class="bg-slate-800 hover:bg-slate-700 text-white text-xs font-bold px-4 py-2 rounded-md border border-slate-700 flex items-center gap-2 transition-colors">
-          <i class="fa-brands fa-whatsapp text-emerald-400"></i>
-          <span>Solicitar cobertura en redes</span>
-        </button>
+      <div class="action-banner">
+        <div>
+          <strong style="color:#ffffff; font-size:1rem; display:block; margin-bottom:4px;">¿Querés coordinar la sesión de fotos y video para la apertura de la jamonera en tu local?</strong>
+          <span style="color:var(--text-muted); font-size:0.85rem;">Mysterik Producciones planifica el rodaje antes del lanzamiento en tu salón.</span>
+        </div>
+        <a href="https://wa.me/5492617094195?text=Hola,%20me%20interesa%20la%20cobertura%20de%20contenido%20audiovisual%20en%20redes%20para%20mi%20local" target="_blank" class="btn-primary" style="white-space:nowrap;">
+          Solicitar Cobertura en Redes
+        </a>
       </div>
 
     </div>
@@ -562,61 +464,57 @@
   <!-- ===================================================================
        SECCIÓN 7: ALIANZAS REGIONALES (TORRENT & MARTINO WINES)
        =================================================================== -->
-  <section id="alianzas" class="py-16 sm:py-20 border-b border-slate-800">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="alianzas">
+    <div class="container">
       
-      <div class="max-w-2xl mb-12">
-        <span class="text-xs uppercase tracking-wider font-bold text-amber-500 block mb-1">Vinculación Territorial</span>
-        <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mb-3">
-          Alianzas Estratégicas en Mendoza
-        </h2>
-        <p class="text-slate-300 text-sm">
-          Dos firmas señeras del ecosistema gastronómico y vitivinícola cuyano respaldan el desembarco de Estancia El Búho.
+      <div class="section-header">
+        <div class="section-tag tag-wine">Presencia Territorial</div>
+        <h2 class="section-title">Alianzas Estratégicas en Mendoza</h2>
+        <p class="section-desc">
+          Dos firmas centenarias del ecosistema gastronómico y vitivinícola de Cuyo avalan la presencia de Estancia El Búho en la provincia.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-10">
-        
-        <!-- Torrent -->
-        <div class="b2b-card p-6 border-t-2 border-t-amber-500">
-          <div class="flex items-center justify-between mb-4">
-            <img src="assets/logo-torrent.svg" alt="Firma Torrent" class="h-9 w-auto">
-            <span class="text-xs font-bold text-amber-500">Desde 1922</span>
+      <div class="grid-2" style="margin-bottom: 24px;">
+        <div class="card" style="border-top: 3px solid var(--color-amber);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <img src="assets/logo-torrent.svg" alt="Firma Torrent" style="height:32px; width:auto;">
+            <span style="font-size:0.75rem; font-weight:700; color:var(--color-amber);">Desde 1922</span>
           </div>
-          <h3 class="text-base font-bold text-white mb-2">Firma Torrent (Mendoza)</h3>
-          <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-            Más de 100 años como referente de quesos, fiambres de selección y delicatessen en la provincia. Aporta la solvencia de distribución mayorista y vitrina selecta.
+          <h3 class="card-title">Firma Torrent</h3>
+          <p class="card-text">
+            Más de un siglo como el templo de quesos, fiambres selectos y delicatessen en Mendoza. Aporta una capilaridad de distribución mayorista consolidada y presencia en mostradores de referencia.
           </p>
-          <div class="text-xs text-slate-400 space-y-1.5 pt-3 border-t border-slate-800">
-            <div><i class="fa-solid fa-location-dot text-amber-500 mr-2"></i> Mercado Central (Local 77, Ciudad).</div>
-            <div><i class="fa-solid fa-location-dot text-amber-500 mr-2"></i> Torrent The Market (Av. San Martín Sur, Godoy Cruz).</div>
-            <div><i class="fa-solid fa-location-dot text-amber-500 mr-2"></i> Familia Raffa en Il Mercato (Maipú).</div>
-          </div>
+          <ul class="card-list">
+            <li><span class="bullet">•</span> <strong>Mercado Central:</strong> Local 77 (Ciudad de Mendoza).</li>
+            <li><span class="bullet">•</span> <strong>Godoy Cruz:</strong> Torrent The Market (Av. San Martín Sur).</li>
+            <li><span class="bullet">•</span> <strong>Maipú:</strong> Familia Raffa en Complejo Il Mercato.</li>
+          </ul>
         </div>
 
-        <!-- Martino Wines -->
-        <div class="b2b-card p-6 border-t-2 border-t-wine-700">
-          <div class="flex items-center justify-between mb-4">
-            <img src="assets/logo-martino.svg" alt="Martino Wines" class="h-9 w-auto">
-            <span class="text-xs font-bold text-rose-400">Guía Michelin</span>
+        <div class="card" style="border-top: 3px solid var(--color-wine);">
+          <div style="display:flex; justify-content:space-between; align-items:center; margin-bottom:12px;">
+            <img src="assets/logo-martino.svg" alt="Martino Wines" style="height:32px; width:auto;">
+            <span style="font-size:0.75rem; font-weight:700; color:#fca5a5;">Guía Michelin</span>
           </div>
-          <h3 class="text-base font-bold text-white mb-2">Bodega Martino Wines</h3>
-          <p class="text-xs text-slate-300 mb-4 leading-relaxed">
-            Bodega patrimonial de 1901 en Mayor Drummond (Luján de Cuyo) recomendada por la Guía MICHELIN. Cuna de varietales inusuales ideales para maridajes con jamón crudo de guarda.
+          <h3 class="card-title">Bodega Martino Wines</h3>
+          <p class="card-text">
+            Bodega patrimonial de 1901 en Mayor Drummond (Luján de Cuyo), recomendada por la Guía MICHELIN por su gastronomía y enoturismo. Productora de etiquetas de alta gama ideales para maridar con jamón crudo de guarda.
           </p>
-          <div class="text-xs text-slate-400 space-y-1.5 pt-3 border-t border-slate-800">
-            <div><i class="fa-solid fa-wine-glass text-rose-400 mr-2"></i> Maridajes guiados con sus líneas Varietales Inusuales y Baldomir.</div>
-            <div><i class="fa-solid fa-sun text-rose-400 mr-2"></i> Estaciones de corte a cuchillo en vivo para sunsets y visitas enoturísticas.</div>
-            <div><i class="fa-solid fa-gift text-rose-400 mr-2"></i> Estuches corporativos combinados de vino y jamón en madera.</div>
-          </div>
+          <ul class="card-list">
+            <li><span class="bullet">•</span> Maridajes guiados con sus líneas <em>Varietales Inusuales</em> y <em>Baldomir</em>.</li>
+            <li><span class="bullet">•</span> Estaciones de corte a cuchillo en vivo para sunsets y turismo enológico.</li>
+            <li><span class="bullet">•</span> Estuches corporativos combinados de vino y jamón en madera pirograbada.</li>
+          </ul>
         </div>
-
       </div>
 
-      <!-- Mapa de Corredores de Mendoza -->
-      <div class="b2b-card p-5 bg-slate-900 border border-slate-800">
-        <h4 class="text-xs uppercase tracking-wider font-bold text-slate-400 mb-3">Red de Cobertura y Corredores Logísticos en Mendoza</h4>
-        <img src="assets/map-mendoza.svg" alt="Mapa Estratégico Mendoza" class="w-full max-w-4xl mx-auto h-auto rounded-lg">
+      <!-- Mapa de Corredores -->
+      <div class="card" style="padding: 20px;">
+        <span style="font-size:0.75rem; text-transform:uppercase; font-weight:700; color:var(--text-dim); display:block; margin-bottom:12px;">
+          Red Territorial y Corredores Logísticos en Gran Mendoza y Valle de Uco
+        </span>
+        <img src="assets/map-mendoza.svg" alt="Mapa Estratégico Mendoza" style="width:100%; max-width:850px; margin:0 auto; display:block; border-radius:6px; border:1px solid var(--border-color);">
       </div>
 
     </div>
@@ -626,60 +524,47 @@
   <!-- ===================================================================
        SECCIÓN 8: CATÁLOGO DE PRODUCTOS
        =================================================================== -->
-  <section id="productos" class="py-16 sm:py-20 border-b border-slate-800 bg-slate-900/30">
-    <div class="max-w-6xl mx-auto px-4 sm:px-6 lg:px-8">
+  <section id="productos">
+    <div class="container">
       
-      <div class="max-w-2xl mb-12">
-        <span class="text-xs uppercase tracking-wider font-bold text-amber-500 block mb-1">Disponibilidad Inmediata</span>
-        <h2 class="text-2xl sm:text-4xl font-serif font-bold text-white mb-3">
-          Formatos Comerciales para Mendoza
-        </h2>
-        <p class="text-slate-300 text-sm">
-          Opciones para salón gastronómico, fiambrería fina y regalos empresariales.
+      <div class="section-header">
+        <div class="section-tag tag-amber">Catálogo Comercial</div>
+        <h2 class="section-title">Formatos Disponibles para Mendoza</h2>
+        <p class="section-desc">
+          Presentaciones orientadas a gastronomía de salón, fiambrería fina y regalos corporativos.
         </p>
       </div>
 
-      <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 mb-8">
-        
-        <div class="b2b-card p-5">
-          <span class="text-[10px] uppercase font-bold text-amber-500 block mb-1">Salón & Eventos</span>
-          <h4 class="text-sm font-bold text-white mb-2">Pieza Entera con Hueso</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            8 a 9.5 kg con 18 a 24 meses de cura. El formato estrella para jamoneras de exhibición y corte en vivo.
-          </p>
+      <div class="grid-4" style="margin-bottom: 24px;">
+        <div class="card">
+          <span style="font-size:0.7rem; text-transform:uppercase; font-weight:700; color:var(--color-amber); display:block; margin-bottom:4px;">Salón & Eventos</span>
+          <h3 class="card-title">Pieza Entera con Hueso</h3>
+          <p class="card-text">8 a 9.5 kg. Pernil con pata curado 18 a 24 meses. El formato estrella para jamonera y corte en vivo.</p>
         </div>
 
-        <div class="b2b-card p-5">
-          <span class="text-[10px] uppercase font-bold text-amber-500 block mb-1">0% Merma</span>
-          <h4 class="text-sm font-bold text-white mb-2">Centros Deshuesados</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Pulidos y envasados al vacío en bloques compactos. Diseñados para cortadoras de precisión en cocina o mostrador.
-          </p>
+        <div class="card">
+          <span style="font-size:0.7rem; text-transform:uppercase; font-weight:700; color:var(--color-amber); display:block; margin-bottom:4px;">0% Desperdicio</span>
+          <h3 class="card-title">Centros Deshuesados</h3>
+          <p class="card-text">Pulidos y al vacío en bloques compactos. Diseñados para fiambrería y máquinas cortadoras.</p>
         </div>
 
-        <div class="b2b-card p-5">
-          <span class="text-[10px] uppercase font-bold text-amber-500 block mb-1">Retail Selecto</span>
-          <h4 class="text-sm font-bold text-white mb-2">Línea "Corte Maestro"</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Sobres de 100g feteados con separadores. Listos para servir en vinotecas, tiendas delicatessen y room service.
-          </p>
+        <div class="card">
+          <span style="font-size:0.7rem; text-transform:uppercase; font-weight:700; color:var(--color-amber); display:block; margin-bottom:4px;">Retail Selecto</span>
+          <h3 class="card-title">Línea "Corte Maestro"</h3>
+          <p class="card-text">Sobres de 100g feteados con separadores. Listos para vinotecas y room service hotelero.</p>
         </div>
 
-        <div class="b2b-card p-5 border-amber-600/40">
-          <span class="text-[10px] uppercase font-bold text-amber-400 block mb-1">Corporativo</span>
-          <h4 class="text-sm font-bold text-white mb-2">Cajas El Búho × Martino</h4>
-          <p class="text-xs text-slate-400 leading-relaxed">
-            Estuche de madera pirograbada con jamón seleccionado + vino de autor de Martino Wines + cuchillo forjado.
-          </p>
+        <div class="card" style="border-color: var(--color-amber);">
+          <span style="font-size:0.7rem; text-transform:uppercase; font-weight:700; color:var(--color-amber); display:block; margin-bottom:4px;">Corporativo VIP</span>
+          <h3 class="card-title">Cajas El Búho × Martino</h3>
+          <p class="card-text">Estuche de madera pirograbada con jamón + vino de autor de Martino Wines + cuchillo forjado.</p>
         </div>
-
       </div>
 
-      <div class="text-center">
-        <button onclick="contactWhatsApp('productos')" class="bg-amber-600 hover:bg-amber-500 text-slate-950 font-bold px-6 py-2.5 rounded-lg text-xs uppercase tracking-wider transition-colors inline-flex items-center gap-2">
-          <i class="fa-solid fa-file-invoice-dollar"></i>
-          <span>Solicitar Lista de Precios Mayorista</span>
-        </button>
+      <div style="text-align: center;">
+        <a href="https://wa.me/5492617094195?text=Hola,%20quisiera%20solicitar%20la%20lista%20de%20precios%20mayorista%20de%20jamones%20El%20B%C3%BAho" target="_blank" class="btn-primary">
+          Solicitar Lista de Precios Mayorista
+        </a>
       </div>
 
     </div>
@@ -689,52 +574,49 @@
   <!-- ===================================================================
        SECCIÓN 9: CONTACTO & CIERRE EJECUTIVO
        =================================================================== -->
-  <section id="contacto" class="py-16 sm:py-24">
-    <div class="max-w-4xl mx-auto px-4 sm:px-6 lg:px-8 text-center">
+  <section id="contacto" style="background:#0c1018; border-bottom:none;">
+    <div class="container" style="text-align:center;">
       
-      <div class="inline-flex items-center gap-2 px-3 py-1 rounded bg-slate-800 text-slate-300 text-xs font-semibold mb-4">
-        <i class="fa-solid fa-handshake text-emerald-400"></i> Contacto y Vinculación Comercial
-      </div>
-
-      <h2 class="text-3xl sm:text-5xl font-serif font-black text-white mb-4">
+      <div class="section-tag tag-green">Contacto y Vinculación Comercial</div>
+      
+      <h2 class="section-title" style="font-size:2.4rem; margin-bottom:12px;">
         Conectá con Mysterik Producciones
       </h2>
 
-      <p class="text-slate-300 text-sm sm:text-base max-w-xl mx-auto mb-8 leading-relaxed">
-        Comunicate directamente para sumar tu local a la red de concesión, coordinar una capacitación de sala o adquirir productos.
+      <p class="section-desc" style="margin: 0 auto 30px auto;">
+        Comunicate de forma directa para sumar tu local a la red de concesión, coordinar una capacitación de sala o cotizar productos en Mendoza.
       </p>
 
-      <!-- Botón Gigante Directo a WhatsApp -->
-      <a href="https://wa.me/5492617094195?text=Hola,%20quiero%20coordinar%20una%20reuni%C3%B3n%20por%20Estancia%20El%20B%C3%BAho%20en%20Mendoza" target="_blank" class="inline-flex items-center gap-3 bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-base sm:text-lg px-8 py-4 rounded-xl shadow-lg transition-transform hover:-translate-y-0.5 mb-10">
-        <i class="fa-brands fa-whatsapp text-2xl"></i>
-        <span>WhatsApp: +54 9 261 709-4195</span>
+      <!-- Botón Principal WhatsApp -->
+      <a href="https://wa.me/5492617094195?text=Hola,%20quiero%20coordinar%20una%20reuni%C3%B3n%20por%20Estancia%20El%20B%C3%BAho%20en%20Mendoza" target="_blank" class="btn-secondary" style="font-size:1.05rem; padding:16px 32px; margin-bottom:36px;">
+        WhatsApp Directo: +54 9 261 709-4195
       </a>
 
-      <!-- 4 Enlaces Rápidos de Consulta -->
-      <div class="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-3 text-left">
-        <button onclick="contactWhatsApp('concesion')" class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-500 text-xs text-slate-300 transition-colors">
-          <strong class="text-white block mb-0.5"><i class="fa-solid fa-coins text-amber-500 mr-1.5"></i> Concesión</strong>
-          Sumar mi local sin inversión inicial.
-        </button>
+      <!-- 4 Accesos Rápidos de Consulta -->
+      <div class="grid-4" style="text-align:left;">
+        <div class="card" style="padding:16px;">
+          <strong style="color:#ffffff; font-size:0.85rem; display:block; margin-bottom:4px;">1. Concesión</strong>
+          <span style="color:var(--text-muted); font-size:0.78rem; display:block; margin-bottom:10px;">Sumar jamonera a mi local sin costo de stock inicial.</span>
+          <a href="https://wa.me/5492617094195?text=Hola,%20me%20interesa%20el%20modelo%20de%20concesi%C3%B3n%20para%20mi%20local" target="_blank" style="color:var(--color-amber); font-size:0.75rem; font-weight:700; text-decoration:none;">Consultar concesión →</a>
+        </div>
 
-        <button onclick="contactWhatsApp('capacitacion')" class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-500 text-xs text-slate-300 transition-colors">
-          <strong class="text-white block mb-0.5"><i class="fa-solid fa-chalkboard-user text-amber-500 mr-1.5"></i> Capacitación</strong>
-          Taller de corte para brigada de sala.
-        </button>
+        <div class="card" style="padding:16px;">
+          <strong style="color:#ffffff; font-size:0.85rem; display:block; margin-bottom:4px;">2. Capacitación</strong>
+          <span style="color:var(--text-muted); font-size:0.78rem; display:block; margin-bottom:10px;">Taller de corte y protocolo para brigada de sala.</span>
+          <a href="https://wa.me/5492617094195?text=Hola,%20quiero%20coordinar%20una%20capacitaci%C3%B3n%20de%20corte%20para%20mi%20personal" target="_blank" style="color:var(--color-amber); font-size:0.75rem; font-weight:700; text-decoration:none;">Coordinar taller →</a>
+        </div>
 
-        <button onclick="contactWhatsApp('redes')" class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-500 text-xs text-slate-300 transition-colors">
-          <strong class="text-white block mb-0.5"><i class="fa-solid fa-camera text-rose-400 mr-1.5"></i> Redes Sociales</strong>
-          Cobertura audiovisual para mi local.
-        </button>
+        <div class="card" style="padding:16px;">
+          <strong style="color:#ffffff; font-size:0.85rem; display:block; margin-bottom:4px;">3. Redes Sociales</strong>
+          <span style="color:var(--text-muted); font-size:0.78rem; display:block; margin-bottom:10px;">Cobertura fotográfica y Reels para mi restaurante.</span>
+          <a href="https://wa.me/5492617094195?text=Hola,%20me%20interesa%20la%20cobertura%20de%20contenido%20audiovisual%20en%20redes" target="_blank" style="color:var(--color-amber); font-size:0.75rem; font-weight:700; text-decoration:none;">Solicitar contenido →</a>
+        </div>
 
-        <button onclick="contactWhatsApp('productos')" class="p-3.5 rounded-lg bg-slate-900 border border-slate-800 hover:border-amber-500 text-xs text-slate-300 transition-colors">
-          <strong class="text-white block mb-0.5"><i class="fa-solid fa-box text-emerald-400 mr-1.5"></i> Precios</strong>
-          Venta mayorista o regalos de empresa.
-        </button>
-      </div>
-
-      <div class="mt-16 pt-8 border-t border-slate-800 text-xs text-slate-500">
-        Estancia El Búho (Agua de Oro, Córdoba) × Mysterik Producciones (Mendoza, Argentina) • 2026
+        <div class="card" style="padding:16px;">
+          <strong style="color:#ffffff; font-size:0.85rem; display:block; margin-bottom:4px;">4. Venta Directa</strong>
+          <span style="color:var(--text-muted); font-size:0.78rem; display:block; margin-bottom:10px;">Compra mayorista o regalos empresariales de fin de año.</span>
+          <a href="https://wa.me/5492617094195?text=Hola,%20quiero%20cotizar%20piezas%20o%20cajas%20corporativas" target="_blank" style="color:var(--color-amber); font-size:0.75rem; font-weight:700; text-decoration:none;">Solicitar cotización →</a>
+        </div>
       </div>
 
     </div>
@@ -742,15 +624,24 @@
 
 
   <!-- ===================================================================
-       BOTÓN FLOTANTE DE WHATSAPP (SIEMPRE ACCESIBLE)
+       FOOTER
        =================================================================== -->
-  <a href="https://wa.me/5492617094195?text=Hola,%20me%20comunico%20desde%20la%20presentaci%C3%B3n%20web%20de%20Estancia%20El%20B%C3%BAho%20en%20Mendoza" target="_blank" class="whatsapp-float" title="Contactar por WhatsApp">
-    <i class="fa-brands fa-whatsapp text-xl"></i>
+  <footer class="site-footer">
+    <div class="container">
+      Estancia El Búho (Agua de Oro, Córdoba - Desde 1948) × Mysterik Producciones (Mendoza, Argentina) • 2026
+    </div>
+  </footer>
+
+
+  <!-- ===================================================================
+       BOTÓN FLOTANTE WHATSAPP (SIEMPRE DISPONIBLE)
+       =================================================================== -->
+  <a href="https://wa.me/5492617094195?text=Hola,%20me%20comunico%20desde%20la%20presentaci%C3%B3n%20web%20de%20Estancia%20El%20B%C3%BAho%20en%20Mendoza" target="_blank" class="whatsapp-float-btn" title="Contactar por WhatsApp">
     <span>WhatsApp +54 9 261 709-4195</span>
   </a>
 
-  <!-- JavaScript -->
-  <script src="js/app.js"></script>
+  <!-- Script JS Puro -->
+  <script src="js/app.js?v=3.0"></script>
 
 </body>
 </html>
