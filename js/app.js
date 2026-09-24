@@ -1,38 +1,38 @@
 /* =====================================================================
    ESTANCIA EL BÚHO × MYSTERIK PRODUCCIONES | MENDOZA
-   Lógica JavaScript Pura y Directa
+   Lógica JavaScript Pura, Directa y Coherente con Valores de Mercado
    WhatsApp: +54 9 261 709-4195
    ===================================================================== */
 
 const WHATSAPP_PHONE = "5492617094195";
 
-// Calculadora Financiera "Que Cada Jamón Valga"
+// Calculadora Financiera "Que Cada Jamón Valga" - Valores reales Mendoza 2026
 const FinancialCalculator = {
   currency: "ARS",
   
   data: {
     ARS: {
       symbol: "$",
-      portionPrice: 14500,
-      hamCost: 380000,
-      minPrice: 8000,
-      maxPrice: 25000,
+      portionPrice: 18000,   // Precio realista en carta de plato de jamón crudo 60g con pan y manteca
+      hamCost: 390000,        // Costo mayorista de reposición por pieza reserva El Búho 8.5kg
+      minPrice: 12000,
+      maxPrice: 28000,
       stepPrice: 500
     },
     USD: {
       symbol: "US$",
-      portionPrice: 14,
-      hamCost: 350,
-      minPrice: 8,
-      maxPrice: 25,
+      portionPrice: 16,
+      hamCost: 340,
+      minPrice: 10,
+      maxPrice: 26,
       stepPrice: 1
     }
   },
 
   state: {
     locations: 6,
-    jamsPerLocation: 2,
-    portionPrice: 14500
+    jamsPerLocation: 1.5,
+    portionPrice: 18000
   },
 
   init() {
@@ -127,33 +127,45 @@ const FinancialCalculator = {
   render() {
     const { locations, jamsPerLocation, portionPrice } = this.state;
     const cfg = this.data[this.currency];
-    const portionsPerHam = 115; // Raciones de 70g
+    
+    // Rendimiento real: pieza 8.5 kg con hueso = 53% magro útil feteable = 4.500 g = 75 platos de 60g
+    const portionsPerHam = 75;
 
     const totalJams = Math.round(locations * jamsPerLocation * 10) / 10;
-    const totalPortions = totalJams * portionsPerHam;
+    const totalPortions = Math.round(totalJams * portionsPerHam);
     const grossTotal = totalPortions * portionPrice;
 
-    // Retorno neto operador
-    const liquidation = totalJams * (portionsPerHam * portionPrice * 0.45);
-    const cost = totalJams * cfg.hamCost;
-    const passiveMonthly = Math.max(0, liquidation - cost);
+    // Concesión 50/50:
+    // El local retiene 50% de la facturación en carta ($0 de inversión de stock previa)
+    // La red liquida 50%
+    const liquidation = grossTotal * 0.50;
+    const totalHamCosts = totalJams * cfg.hamCost;
+    
+    // Ganancia NETA pasiva mensual para el operador/inversor de la red
+    const passiveMonthly = Math.max(0, liquidation - totalHamCosts);
     const passiveYearly = passiveMonthly * 12;
+
+    // Ganancia limpia promedio para cada establecimiento asociado
+    const venueProfitTotal = grossTotal - liquidation;
+    const venueProfitAvg = locations > 0 ? (venueProfitTotal / locations) : 0;
 
     const elMonth = document.getElementById("res-passive-month");
     const elYear = document.getElementById("res-passive-year");
     const elJams = document.getElementById("res-total-jams");
     const elGross = document.getElementById("res-gross-total");
+    const elVenue = document.getElementById("res-venue-avg");
 
     if (elMonth) elMonth.textContent = `${cfg.symbol} ${this.format(passiveMonthly)}`;
     if (elYear) elYear.textContent = `${cfg.symbol} ${this.format(passiveYearly)}`;
     if (elJams) elJams.textContent = `${totalJams} piezas/mes`;
     if (elGross) elGross.textContent = `${cfg.symbol} ${this.format(grossTotal)}`;
+    if (elVenue) elVenue.textContent = `${cfg.symbol} ${this.format(venueProfitAvg)} /mes`;
 
     // Enlace de WhatsApp dinámico con los valores simulados
     const btnWa = document.getElementById("btn-wa-simulation");
     if (btnWa) {
       const msg = encodeURIComponent(
-        `Hola, estuve analizando en la web la proyección de concesión 'Que cada jamón valga' con ${locations} locales y ${totalJams} jamones/mes (${cfg.symbol} ${this.format(passiveMonthly)} mensual neto). Me interesa coordinar una reunión.`
+        `Hola, estuve analizando en la web la proyección de concesión 'Que cada jamón valga' con ${locations} locales y ${totalJams} jamones/mes (${cfg.symbol} ${this.format(passiveMonthly)} mensual neto para la red). Me interesa coordinar una reunión.`
       );
       btnWa.href = `https://wa.me/${WHATSAPP_PHONE}?text=${msg}`;
     }

@@ -558,6 +558,61 @@ section {
   margin: 6px 0;
 }
 
+/* Invoice / Ficha de Estimaciones */
+.invoice-card {
+  background: #0d121c;
+  border: 1px solid var(--border-highlight);
+  border-radius: 8px;
+  padding: 24px;
+  margin-top: 24px;
+}
+
+.invoice-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-bottom: 14px;
+  border-bottom: 1px solid var(--border-color);
+  margin-bottom: 16px;
+}
+
+.invoice-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.85rem;
+}
+
+.invoice-table th {
+  text-align: left;
+  color: var(--text-dim);
+  font-size: 0.72rem;
+  text-transform: uppercase;
+  letter-spacing: 0.8px;
+  padding: 8px 12px;
+  border-bottom: 1px solid var(--border-color);
+}
+
+.invoice-table td {
+  padding: 10px 12px;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  color: var(--text-main);
+}
+
+.invoice-table tr:last-child td {
+  border-bottom: none;
+}
+
+.invoice-highlight-row {
+  background: rgba(16, 185, 129, 0.08);
+  font-weight: 700;
+}
+
+.invoice-highlight-row td {
+  color: var(--color-green);
+  border-top: 1px solid var(--color-green-border);
+  border-bottom: 1px solid var(--color-green-border);
+}
+
 /* Action Banner */
 .action-banner {
   background: var(--bg-card);

@@ -27,14 +27,21 @@
    - Protocolo de sala y venta sugestiva que incrementa el ticket promedio hasta un 35%.
 
 3. **Modelo "Que Cada Jamón Valga" (Red de Concesiones e Ingresos Pasivos):**
-   - **Para el Local Gastronómico:** $0 de inversión inicial en inventario. Jamonera y pernil en comodato. Cero merma (pagan lo consumido) con margen garantizado.
-   - **Para el Gestor / Inversor:** Construcción de una red de ingresos pasivos recurrentes en los principales puntos gastronómicos de Mendoza.
-   - **Simulador Financiero:** Proyección interactiva en ARS y USD con métricas de facturación bruta y retorno pasivo mensual/anual.
+   - **Para el Local Gastronómico:** $0 de inversión inicial en stock. Jamonera profesional y cuchillo en comodato. Retiene el 50% limpio de cada plato vendido.
+   - **Liquidación y Factura Estimativa Unitaria (Valores 2026):**
+     * Pieza entera 8.5 kg ➜ 53% magro noble feteable (4.500 g útiles) = 75 platos estándar de 60g.
+     * PVP sugerido en carta: $18.000 ARS (US$ 16).
+     * Facturación bruta generada en salón por pieza: $1.350.000 ARS (US$ 1.200).
+     * Margen neto del local (50%): $675.000 ARS (US$ 600) limpios.
+     * Liquidación bruta a la red (50%): $675.000 ARS.
+     * Costo reposición pieza El Búho: - $390.000 ARS.
+     * **Ganancia NETA pasiva por jamón para la red: $285.000 ARS (US$ 250)**.
+   - **Simulador Financiero:** Proyección interactiva en ARS y USD con métricas de facturación bruta, retorno pasivo mensual/anual y ganancia neta para cada local asociado.
 
-4. **Cobertura Audiovisual y Contenido para Redes Sociales:**
-   - Producción in-situ en el punto de venta (fotografía y filmación en alta calidad).
-   - Generación de Reels y videos verticales para las redes oficiales del local anfitrión.
-   - Campañas de difusión geolocalizada en Mendoza para atraer comensales.
+4. **Contenido Digital y Cobertura Práctica para Redes (Mysterik Producciones):**
+   - Producción audiovisual in-situ: Registro de fotos gastronómicas reales y filmación de videos cortos (Reels/TikTok) del corte a cuchillo en el local.
+   - Banco de 3 a 5 piezas en formato vertical listas para publicar por el community manager del establecimiento.
+   - Articulación con comunicadores y cuentas gastronómicas de Mendoza (sin promesas infladas de publicidad masiva: contenido directo que llena mesas).
 
 5. **Alianzas Territoriales Clave:**
    - **Firma Torrent (Desde 1922):** Mercado Central (Local 77), Godoy Cruz (Torrent The Market) y Maipú (Familia Raffa en Il Mercato).
