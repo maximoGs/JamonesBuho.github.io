@@ -1,399 +1,205 @@
 /* =====================================================================
-   APP CONTROLLER: ESTANCIA EL BÚHO × MYSTERIK PRODUCCIONES
-   Slide Navigation, Deck Mode, Audio Feedback, and Interaction System
+   ESTANCIA EL BÚHO × MYSTERIK PRODUCCIONES | MENDOZA
+   Lógica Ejecutiva, Navegación y Calculadora B2B
+   Contacto directo WhatsApp: +54 9 261 709-4195
    ===================================================================== */
 
-const App = {
-  currentSlide: 0,
-  totalSlides: 10,
-  mode: 'presentation', // 'presentation' or 'scroll'
-  soundEnabled: true,
-  audioCtx: null,
+const PHONE_NUMBER = "5492617094195";
+
+const Calculator = {
+  currency: "ARS",
+  
+  config: {
+    ARS: {
+      symbol: "$",
+      portionPrice: 14500,
+      hamCost: 380000,
+      minPrice: 8000,
+      maxPrice: 24000,
+      stepPrice: 500
+    },
+    USD: {
+      symbol: "US$",
+      portionPrice: 14,
+      hamCost: 350,
+      minPrice: 8,
+      maxPrice: 25,
+      stepPrice: 1
+    }
+  },
+
+  state: {
+    locations: 6,
+    jamsPerLocation: 2,
+    portionPrice: 14500
+  },
 
   init() {
-    this.detectInitialMode();
-    this.bindEvents();
-    this.updateSlideUI();
-    this.setupTouchGestures();
+    this.bind();
+    this.update();
   },
 
-  detectInitialMode() {
-    // If mobile or if user set query param ?mode=scroll
-    const urlParams = new URLSearchParams(window.location.search);
-    const modeParam = urlParams.get('mode');
-    
-    if (modeParam === 'scroll' || window.innerWidth < 768) {
-      this.setMode('scroll');
-    } else {
-      this.setMode('presentation');
-    }
-  },
+  bind() {
+    const loc = document.getElementById("calc-locations");
+    const rot = document.getElementById("calc-rotation");
+    const prc = document.getElementById("calc-price");
+    const btnArs = document.getElementById("btn-curr-ars");
+    const btnUsd = document.getElementById("btn-curr-usd");
 
-  setMode(newMode) {
-    this.mode = newMode;
-    const body = document.body;
-    const toggleBtnText = document.getElementById('mode-toggle-text');
-    const toggleBtnIcon = document.getElementById('mode-toggle-icon');
-
-    if (newMode === 'presentation') {
-      body.classList.remove('mode-scroll');
-      body.classList.add('mode-presentation');
-      if (toggleBtnText) toggleBtnText.textContent = 'Modo Web Dossier';
-      if (toggleBtnIcon) toggleBtnIcon.className = 'fa-solid fa-scroll text-gold-400 mr-2';
-      this.goToSlide(this.currentSlide, false);
-    } else {
-      body.classList.remove('mode-presentation');
-      body.classList.add('mode-scroll');
-      if (toggleBtnText) toggleBtnText.textContent = 'Modo Presentación';
-      if (toggleBtnIcon) toggleBtnIcon.className = 'fa-solid fa-tv text-gold-400 mr-2';
-      
-      // Scroll smoothly to corresponding section in scroll mode
-      const targetSec = document.getElementById(`scroll-slide-${this.currentSlide}`);
-      if (targetSec) {
-        targetSec.scrollIntoView({ behavior: 'smooth' });
-      }
-    }
-    this.playSound('click');
-  },
-
-  toggleMode() {
-    if (this.mode === 'presentation') {
-      this.setMode('scroll');
-    } else {
-      this.setMode('presentation');
-    }
-  },
-
-  bindEvents() {
-    // Mode toggle button
-    const btnToggleMode = document.getElementById('btn-toggle-mode');
-    if (btnToggleMode) {
-      btnToggleMode.addEventListener('click', () => this.toggleMode());
-    }
-
-    // Navigation buttons
-    const btnNext = document.getElementById('deck-next');
-    const btnPrev = document.getElementById('deck-prev');
-    if (btnNext) btnNext.addEventListener('click', () => this.nextSlide());
-    if (btnPrev) btnPrev.addEventListener('click', () => this.prevSlide());
-
-    // Fullscreen button
-    const btnFullscreen = document.getElementById('btn-fullscreen');
-    if (btnFullscreen) {
-      btnFullscreen.addEventListener('click', () => this.toggleFullscreen());
-    }
-
-    // Audio toggle button
-    const btnAudio = document.getElementById('btn-audio');
-    if (btnAudio) {
-      btnAudio.addEventListener('click', () => this.toggleAudio());
-    }
-
-    // Print / PDF Export
-    const btnPrint = document.getElementById('btn-print-deck');
-    if (btnPrint) {
-      btnPrint.addEventListener('click', () => {
-        window.print();
+    if (loc) {
+      loc.addEventListener("input", (e) => {
+        this.state.locations = parseInt(e.target.value, 10);
+        document.getElementById("val-locations").textContent = this.state.locations;
+        this.update();
       });
     }
 
-    // Keyboard navigation
-    window.addEventListener('keydown', (e) => {
-      // Don't intercept if user is typing in an input
-      if (['INPUT', 'TEXTAREA', 'SELECT'].includes(document.activeElement.tagName)) {
-        return;
-      }
-
-      if (e.key === 'ArrowRight' || e.key === 'PageDown' || e.key === ' ') {
-        if (this.mode === 'presentation') {
-          e.preventDefault();
-          this.nextSlide();
-        }
-      } else if (e.key === 'ArrowLeft' || e.key === 'PageUp') {
-        if (this.mode === 'presentation') {
-          e.preventDefault();
-          this.prevSlide();
-        }
-      } else if (e.key.toLowerCase() === 'f') {
-        e.preventDefault();
-        this.toggleFullscreen();
-      } else if (e.key.toLowerCase() === 'm') {
-        e.preventDefault();
-        this.toggleMode();
-      } else if (e.key.toLowerCase() === 'p') {
-        e.preventDefault();
-        window.print();
-      }
-    });
-
-    // Jump buttons from hero
-    const btnStartDeck = document.getElementById('hero-btn-start');
-    if (btnStartDeck) {
-      btnStartDeck.addEventListener('click', () => {
-        if (this.mode === 'presentation') {
-          this.goToSlide(1);
-        } else {
-          document.getElementById('scroll-slide-1')?.scrollIntoView({ behavior: 'smooth' });
-        }
+    if (rot) {
+      rot.addEventListener("input", (e) => {
+        this.state.jamsPerLocation = parseFloat(e.target.value);
+        document.getElementById("val-rotation").textContent = this.state.jamsPerLocation;
+        this.update();
       });
     }
 
-    const btnGoModel = document.getElementById('hero-btn-model');
-    if (btnGoModel) {
-      btnGoModel.addEventListener('click', () => {
-        if (this.mode === 'presentation') {
-          this.goToSlide(5); // Slide 5 is the Concession / Calculator slide
-        } else {
-          document.getElementById('scroll-slide-5')?.scrollIntoView({ behavior: 'smooth' });
-        }
+    if (prc) {
+      prc.addEventListener("input", (e) => {
+        this.state.portionPrice = parseInt(e.target.value, 10);
+        this.updatePriceLabel();
+        this.update();
       });
     }
+
+    if (btnArs && btnUsd) {
+      btnArs.addEventListener("click", () => this.setCurrency("ARS"));
+      btnUsd.addEventListener("click", () => this.setCurrency("USD"));
+    }
   },
 
-  setupTouchGestures() {
-    let touchStartX = 0;
-    let touchStartY = 0;
+  setCurrency(curr) {
+    if (this.currency === curr) return;
+    this.currency = curr;
 
-    window.addEventListener('touchstart', (e) => {
-      touchStartX = e.changedTouches[0].screenX;
-      touchStartY = e.changedTouches[0].screenY;
-    }, { passive: true });
+    const btnArs = document.getElementById("btn-curr-ars");
+    const btnUsd = document.getElementById("btn-curr-usd");
+    const prc = document.getElementById("calc-price");
 
-    window.addEventListener('touchend', (e) => {
-      if (this.mode !== 'presentation') return;
-
-      const touchEndX = e.changedTouches[0].screenX;
-      const touchEndY = e.changedTouches[0].screenY;
-      const diffX = touchEndX - touchStartX;
-      const diffY = touchEndY - touchStartY;
-
-      // Ensure horizontal swipe is dominant and significant (> 50px)
-      if (Math.abs(diffX) > Math.abs(diffY) && Math.abs(diffX) > 50) {
-        if (diffX < 0) {
-          this.nextSlide();
-        } else {
-          this.prevSlide();
-        }
+    if (curr === "ARS") {
+      btnArs.className = "px-3 py-1 text-xs font-bold rounded bg-amber-600 text-white";
+      btnUsd.className = "px-3 py-1 text-xs font-medium rounded text-slate-400 hover:text-white";
+      this.state.portionPrice = this.config.ARS.portionPrice;
+      if (prc) {
+        prc.min = this.config.ARS.minPrice;
+        prc.max = this.config.ARS.maxPrice;
+        prc.step = this.config.ARS.stepPrice;
+        prc.value = this.state.portionPrice;
       }
-    }, { passive: true });
-  },
-
-  goToSlide(index, playSfx = true) {
-    if (index < 0 || index >= this.totalSlides) return;
-    
-    const prevIndex = this.currentSlide;
-    this.currentSlide = index;
-
-    const slides = document.querySelectorAll('.presentation-container .slide-item');
-    slides.forEach((slide, idx) => {
-      if (idx === index) {
-        slide.classList.add('active-slide');
-      } else {
-        slide.classList.remove('active-slide');
-      }
-    });
-
-    this.updateSlideUI();
-    if (playSfx && prevIndex !== index) {
-      this.playSound('transition');
-    }
-  },
-
-  nextSlide() {
-    if (this.currentSlide < this.totalSlides - 1) {
-      this.goToSlide(this.currentSlide + 1);
-    }
-  },
-
-  prevSlide() {
-    if (this.currentSlide > 0) {
-      this.goToSlide(this.currentSlide - 1);
-    }
-  },
-
-  updateSlideUI() {
-    // Update slide number indicator
-    const currentNumStr = String(this.currentSlide + 1).padStart(2, '0');
-    const totalNumStr = String(this.totalSlides).padStart(2, '0');
-
-    const numDisplay = document.getElementById('slide-number-display');
-    if (numDisplay) {
-      numDisplay.innerHTML = `<span class="text-gold-400 font-bold">${currentNumStr}</span> <span class="text-neutral-500 text-xs">/ ${totalNumStr}</span>`;
-    }
-
-    // Update progress bar
-    const progressBar = document.getElementById('deck-progress-bar');
-    if (progressBar) {
-      const percentage = ((this.currentSlide + 1) / this.totalSlides) * 100;
-      progressBar.style.width = `${percentage}%`;
-    }
-
-    // Prev/Next button states
-    const btnPrev = document.getElementById('deck-prev');
-    const btnNext = document.getElementById('deck-next');
-    if (btnPrev) {
-      btnPrev.disabled = this.currentSlide === 0;
-      btnPrev.classList.toggle('opacity-30', this.currentSlide === 0);
-      btnPrev.classList.toggle('cursor-not-allowed', this.currentSlide === 0);
-    }
-    if (btnNext) {
-      btnNext.disabled = this.currentSlide === this.totalSlides - 1;
-      btnNext.classList.toggle('opacity-30', this.currentSlide === this.totalSlides - 1);
-      btnNext.classList.toggle('cursor-not-allowed', this.currentSlide === this.totalSlides - 1);
-    }
-  },
-
-  toggleFullscreen() {
-    if (!document.fullscreenElement) {
-      document.documentElement.requestFullscreen().catch((err) => {
-        console.warn(`Error attempting to enable fullscreen: ${err.message}`);
-      });
-      document.getElementById('icon-fullscreen')?.classList.replace('fa-expand', 'fa-compress');
     } else {
-      if (document.exitFullscreen) {
-        document.exitFullscreen();
-      }
-      document.getElementById('icon-fullscreen')?.classList.replace('fa-compress', 'fa-expand');
-    }
-  },
-
-  toggleAudio() {
-    this.soundEnabled = !this.soundEnabled;
-    const iconAudio = document.getElementById('icon-audio');
-    if (iconAudio) {
-      if (this.soundEnabled) {
-        iconAudio.className = 'fa-solid fa-volume-high text-gold-400';
-        this.playSound('click');
-      } else {
-        iconAudio.className = 'fa-solid fa-volume-xmark text-neutral-500';
+      btnUsd.className = "px-3 py-1 text-xs font-bold rounded bg-amber-600 text-white";
+      btnArs.className = "px-3 py-1 text-xs font-medium rounded text-slate-400 hover:text-white";
+      this.state.portionPrice = this.config.USD.portionPrice;
+      if (prc) {
+        prc.min = this.config.USD.minPrice;
+        prc.max = this.config.USD.maxPrice;
+        prc.step = this.config.USD.stepPrice;
+        prc.value = this.state.portionPrice;
       }
     }
+
+    this.updatePriceLabel();
+    this.update();
   },
 
-  // Synthesized audio feedback via Web Audio API (completely standalone!)
-  playSound(type) {
-    if (!this.soundEnabled) return;
-    try {
-      const AudioContext = window.AudioContext || window.webkitAudioContext;
-      if (!this.audioCtx) {
-        this.audioCtx = new AudioContext();
-      }
-      if (this.audioCtx.state === 'suspended') {
-        this.audioCtx.resume();
-      }
+  updatePriceLabel() {
+    const el = document.getElementById("val-price");
+    if (!el) return;
+    const cfg = this.config[this.currency];
+    el.textContent = `${cfg.symbol} ${this.format(this.state.portionPrice)}`;
+  },
 
-      const osc = this.audioCtx.createOscillator();
-      const gain = this.audioCtx.createGain();
-      osc.connect(gain);
-      gain.connect(this.audioCtx.destination);
+  format(num) {
+    return new Intl.NumberFormat("es-AR").format(Math.round(num));
+  },
 
-      const now = this.audioCtx.currentTime;
+  update() {
+    const { locations, jamsPerLocation, portionPrice } = this.state;
+    const cfg = this.config[this.currency];
+    const portionsPerHam = 115; // Raciones de 70g
 
-      if (type === 'click') {
-        osc.type = 'sine';
-        osc.frequency.setValueAtTime(600, now);
-        osc.frequency.exponentialRampToValueAtTime(800, now + 0.05);
-        gain.gain.setValueAtTime(0.04, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.05);
-        osc.start(now);
-        osc.stop(now + 0.05);
-      } else if (type === 'transition') {
-        osc.type = 'triangle';
-        osc.frequency.setValueAtTime(320, now);
-        osc.frequency.exponentialRampToValueAtTime(540, now + 0.12);
-        gain.gain.setValueAtTime(0.05, now);
-        gain.gain.exponentialRampToValueAtTime(0.001, now + 0.12);
-        osc.start(now);
-        osc.stop(now + 0.12);
-      }
-    } catch (e) {
-      // Audio not permitted or supported; fail silently
+    // Métricas
+    const totalJams = Math.round(locations * jamsPerLocation * 10) / 10;
+    const totalPortions = totalJams * portionsPerHam;
+    const grossTurnover = totalPortions * portionPrice;
+
+    // Retorno operador / inversor neto de piezas
+    const operatorLiquidation = totalJams * (portionsPerHam * portionPrice * 0.45);
+    const hamCosts = totalJams * cfg.hamCost;
+    const netPassiveMonthly = Math.max(0, operatorLiquidation - hamCosts);
+    const netPassiveYearly = netPassiveMonthly * 12;
+
+    // Ganancia establecimiento
+    const venueProfitTotal = grossTurnover - operatorLiquidation;
+    const venueProfitAvg = locations > 0 ? venueProfitTotal / locations : 0;
+
+    // Actualizar elementos DOM
+    const elPassiveMonth = document.getElementById("out-passive-month");
+    const elPassiveYear = document.getElementById("out-passive-year");
+    const elVenueProfit = document.getElementById("out-venue-profit");
+    const elTotalJams = document.getElementById("out-total-jams");
+    const elGross = document.getElementById("out-gross-turnover");
+
+    if (elPassiveMonth) elPassiveMonth.textContent = `${cfg.symbol} ${this.format(netPassiveMonthly)}`;
+    if (elPassiveYear) elPassiveYear.textContent = `${cfg.symbol} ${this.format(netPassiveYearly)}`;
+    if (elVenueProfit) elVenueProfit.textContent = `${cfg.symbol} ${this.format(venueProfitAvg)}`;
+    if (elTotalJams) elTotalJams.textContent = `${totalJams} piezas/mes`;
+    if (elGross) elGross.textContent = `${cfg.symbol} ${this.format(grossTurnover)}`;
+
+    // Actualizar enlace WhatsApp de la simulación
+    const waBtn = document.getElementById("btn-calc-wa");
+    if (waBtn) {
+      const msg = encodeURIComponent(
+        `Hola, estuve analizando el modelo "Que cada jamón valga" en la web con una proyección de ${locations} locales y ${totalJams} jamones/mes (${cfg.symbol} ${this.format(netPassiveMonthly)} pasivo mensual). Me interesa avanzar en una reunión.`
+      );
+      waBtn.href = `https://wa.me/${PHONE_NUMBER}?text=${msg}`;
     }
   }
 };
 
-// Modal System for Contact & WhatsApp Inquiries
-const ModalSystem = {
-  open(type = 'general') {
-    const modal = document.getElementById('contact-modal');
-    if (!modal) return;
+// Navegación móvil y enlaces directos
+document.addEventListener("DOMContentLoaded", () => {
+  Calculator.init();
 
-    const selectReason = document.getElementById('modal-field-reason');
-    if (selectReason) {
-      if (type === 'concesion') selectReason.value = 'concesion';
-      else if (type === 'capacitacion') selectReason.value = 'capacitacion';
-      else if (type === 'productos') selectReason.value = 'productos';
-      else if (type === 'alianza') selectReason.value = 'alianza';
-    }
+  // Menú hamburguesa móvil
+  const btnMenu = document.getElementById("btn-mobile-menu");
+  const mobileMenu = document.getElementById("mobile-menu");
 
-    modal.classList.remove('hidden');
-    modal.classList.add('flex');
-    App.playSound('click');
-  },
+  if (btnMenu && mobileMenu) {
+    btnMenu.addEventListener("click", () => {
+      mobileMenu.classList.toggle("hidden");
+    });
 
-  close() {
-    const modal = document.getElementById('contact-modal');
-    if (!modal) return;
-    modal.classList.add('hidden');
-    modal.classList.remove('flex');
-    App.playSound('click');
-  },
-
-  submitForm(e) {
-    e.preventDefault();
-    const name = document.getElementById('modal-name')?.value || 'Interesado';
-    const venue = document.getElementById('modal-venue')?.value || 'Establecimiento';
-    const reason = document.getElementById('modal-field-reason')?.value || 'concesion';
-    const phone = document.getElementById('modal-phone')?.value || '';
-    const notes = document.getElementById('modal-notes')?.value || '';
-
-    let reasonText = 'Información General';
-    if (reason === 'concesion') reasonText = 'Modelo de Concesión ("Que Cada Jamón Valga")';
-    if (reason === 'capacitacion') reasonText = 'Charlas y Masterclasses de Corte & Maridaje';
-    if (reason === 'productos') reasonText = 'Venta Directa de Piezas y Regalos Corporativos';
-    if (reason === 'alianza') reasonText = 'Alianza Regional / Punto de Venta';
-
-    const msg = encodeURIComponent(
-      `🍷 *ESTANCIA EL BÚHO × MYSTERIK PRODUCCIONES*\n\n` +
-      `¡Hola! Me comunico desde la presentación web en Mendoza:\n\n` +
-      `• *Nombre:* ${name}\n` +
-      `• *Establecimiento / Empresa:* ${venue}\n` +
-      `• *Teléfono:* ${phone}\n` +
-      `• *Interés:* ${reasonText}\n` +
-      (notes ? `• *Mensaje:* ${notes}\n\n` : `\n`) +
-      `Me gustaría coordinar una reunión y degustación de jamón El Búho en Mendoza.`
-    );
-
-    // Provide immediate visual confirmation
-    const btnSubmit = document.getElementById('modal-btn-submit');
-    if (btnSubmit) {
-      btnSubmit.innerHTML = `<i class="fa-solid fa-check mr-2 text-emerald-400"></i> Redirigiendo a WhatsApp...`;
-    }
-
-    setTimeout(() => {
-      window.open(`https://wa.me/5492610000000?text=${msg}`, '_blank');
-      ModalSystem.close();
-      if (btnSubmit) {
-        btnSubmit.innerHTML = `Enviar Solicitud y Contactar`;
-      }
-    }, 600);
-  }
-};
-
-// Global expose
-window.App = App;
-window.ModalSystem = ModalSystem;
-
-document.addEventListener('DOMContentLoaded', () => {
-  App.init();
-
-  // Close modal when clicking on backdrop
-  const modal = document.getElementById('contact-modal');
-  if (modal) {
-    modal.addEventListener('click', (e) => {
-      if (e.target === modal) {
-        ModalSystem.close();
-      }
+    mobileMenu.querySelectorAll("a").forEach(link => {
+      link.addEventListener("click", () => {
+        mobileMenu.classList.add("hidden");
+      });
     });
   }
 });
+
+// Función global para WhatsApp
+window.contactWhatsApp = function(topic) {
+  let msg = "Hola, me comunico a través de la presentación de Estancia El Búho x Mysterik Producciones en Mendoza.";
+  if (topic === "concesion") {
+    msg = "Hola, me interesa conocer las condiciones para sumar mi local a la red de concesión ('Que cada jamón valga') en Mendoza.";
+  } else if (topic === "capacitacion") {
+    msg = "Hola, me gustaría coordinar una capacitación de corte a cuchillo o cata sensorial para mi equipo / establecimiento.";
+  } else if (topic === "redes") {
+    msg = "Hola, me interesa la cobertura de contenido audiovisual para redes de Mysterik Producciones para mi local / bodega.";
+  } else if (topic === "productos") {
+    msg = "Hola, quisiera solicitar la lista de precios mayorista y formatos de venta de jamón Estancia El Búho en Mendoza.";
+  } else if (topic === "alianza") {
+    msg = "Hola, me interesa una reunión para vincular mi bodega / firma comercial con Estancia El Búho y Mysterik Producciones.";
+  }
+
+  window.open(`https://wa.me/${PHONE_NUMBER}?text=${encodeURIComponent(msg)}`, "_blank");
+};
